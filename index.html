@@ -2,2081 +2,1154 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Untuk Kamu 💗</title>
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg0:#07060b;
-      --bg1:#0d0a15;
-
-      --ink:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.72);
-      --faint:rgba(255,255,255,.52);
-
-      --stroke:rgba(255,255,255,.16);
-      --shadow: 0 30px 90px rgba(0,0,0,.65);
-
-      --rose:#ff6fb1;
-      --gold:#ffd6a6;
-      --lav:#b9a6ff;
-
-      --serif:"Playfair Display", serif;
-      --sans:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-
-      --r:28px;
-
-      /* Safe-area padding helpers */
-      --safeL: max(14px, env(safe-area-inset-left));
-      --safeR: max(14px, env(safe-area-inset-right));
-      --safeT: max(14px, env(safe-area-inset-top));
-      --safeB: max(18px, env(safe-area-inset-bottom));
+    :root {
+      --bg0: #06050a;
+      --bg1: #0e0918;
+      --ink: rgba(255,255,255,.93);
+      --muted: rgba(255,255,255,.68);
+      --stroke: rgba(255,255,255,.13);
+      --rose: #ff6fb1;
+      --gold: #ffd6a6;
+      --lav: #c4b3ff;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", system-ui, sans-serif;
+      --mono: "JetBrains Mono", monospace;
+      --r: 20px;
+      --shadow: 0 18px 56px rgba(0,0,0,.65);
+      --safeT: max(10px, env(safe-area-inset-top));
+      --safeB: max(14px, env(safe-area-inset-bottom));
+      --safeL: max(12px, env(safe-area-inset-left));
+      --safeR: max(12px, env(safe-area-inset-right));
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      color:var(--ink);
-      font-family:var(--sans);
-      background:
-        radial-gradient(1200px 900px at 20% 10%, rgba(185,166,255,.16), transparent 60%),
-        radial-gradient(900px 700px at 80% 30%, rgba(255,111,177,.16), transparent 55%),
-        radial-gradient(900px 700px at 60% 90%, rgba(255,214,166,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow:hidden;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overscroll-behavior: none; -webkit-text-size-adjust: 100%; }
 
-    /* sparkle */
-    #sparkle{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .app{
-      position:relative;
-      z-index:2;
-      height:100vh;
-      overflow:hidden;
-    }
-
-    .screen{
-      position:absolute;
-      inset:0;
-      display:none;
-      place-items:center;
-      padding: calc(var(--safeT) + 6px) var(--safeR) calc(var(--safeB) + 8px) var(--safeL);
-      overflow:hidden;
-    }
-    .screen.active{ display:grid; }
-
-    .card{
-      width:min(560px, 94vw);
-      border-radius: var(--r);
-      padding: 22px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06));
-      border:1px solid var(--stroke);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-    .title{
-      font-family:var(--serif);
-      font-size: 30px;
-      margin:0 0 8px 0;
-      text-align:center;
-      letter-spacing:.2px;
-    }
-    .subtitle{
-      margin:0;
-      color:var(--muted);
-      font-size: 13.5px;
-      line-height:1.6;
-      text-align:center;
-    }
-
-    .row{
-      display:flex;
-      gap:10px;
-      margin-top: 18px;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    input[type="text"]{
-      width: 100%;
-      height: 46px;
-      border-radius: 16px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.25);
+    body {
+      font-family: var(--sans);
       color: var(--ink);
-      font-size: 15px;
-      padding: 0 14px;
-      outline:none;
+      background:
+        radial-gradient(ellipse 800px 500px at 20% 5%,  rgba(196,179,255,.14), transparent 60%),
+        radial-gradient(ellipse 600px 450px at 85% 25%, rgba(255,111,177,.14), transparent 55%),
+        radial-gradient(ellipse 550px 450px at 55% 95%, rgba(255,214,166,.09), transparent 55%),
+        linear-gradient(170deg, var(--bg0) 0%, var(--bg1) 100%);
+      overflow: hidden;
     }
 
-    .btn{
-      height: 44px;
-      border-radius: 999px;
-      padding: 0 18px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: linear-gradient(180deg, rgba(255,111,177,.75), rgba(255,111,177,.45));
-      color: #1b0b16;
-      font-weight: 800;
-      cursor:pointer;
-      box-shadow: 0 18px 60px rgba(255,111,177,.25);
-      transition: transform .12s ease;
-      user-select:none;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btn:active{ transform: scale(.98); }
+    /* ── SPARKLE ── */
+    #sparkle { position:fixed; inset:0; pointer-events:none; z-index:0; }
 
-    /* shake */
-    @keyframes shake{
-      0%,100%{ transform: translateX(0); }
-      20%{ transform: translateX(-6px); }
-      40%{ transform: translateX(6px); }
-      60%{ transform: translateX(-4px); }
-      80%{ transform: translateX(4px); }
-    }
-    .shake{ animation: shake .35s ease; }
+    /* ── APP ── */
+    .app { position:relative; z-index:2; height:100dvh; overflow:hidden; }
 
-    /* boot */
-    .bootWrap{ width:min(560px, 94vw); text-align:center; }
-    .bootBox{
-      margin: 0 auto;
-      width:min(540px, 94vw);
+    .screen {
+      position:absolute; inset:0;
+      display:none; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding: var(--safeT) var(--safeR) var(--safeB) var(--safeL);
+    }
+    .screen.active { display:flex; }
+
+    /* ── CARD (gateway) ── */
+    .card {
+      width: min(420px, 90vw);
       border-radius: var(--r);
-      padding: 22px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
-      border:1px solid var(--stroke);
+      padding: 20px 16px;
+      background: linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
-    .bootTitle{ font-family: var(--serif); font-size: 28px; margin:0 0 6px 0; }
-    .bootLine{
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing:.12em;
-      color: rgba(255,255,255,.72);
-      margin-top: 14px;
-      min-height: 20px;
-    }
-    .dot{
-      display:inline-block;
-      width: 6px; height: 6px;
-      border-radius:50%;
-      background: rgba(255,111,177,.85);
-      box-shadow: 0 0 20px rgba(255,111,177,.55);
-      margin: 0 4px;
-      animation: blink 1.1s infinite ease-in-out;
-    }
-    .dot:nth-child(2){ animation-delay:.15s }
-    .dot:nth-child(3){ animation-delay:.3s }
-    @keyframes blink{ 0%,100%{opacity:.25} 50%{opacity:1} }
-
-    /* lane */
-    .lane{
-      position:absolute;
-      inset:0;
-      overflow:auto;
-      -webkit-overflow-scrolling: touch;
-      padding: calc(var(--safeT) + 6px) var(--safeR) calc(var(--safeB) + 90px) var(--safeL);
-    }
-    .laneInner{
-      width:min(920px, 92vw);
-      margin:0 auto;
-    }
-    .laneHeader{
-      text-align:center;
-      user-select:none;
-      padding: 6px 0 0;
-    }
-    .laneHeader h2{
+    .c-title {
       font-family: var(--serif);
-      margin: 0;
-      font-size: 30px;
+      font-size: clamp(22px, 6vw, 28px);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.15;
     }
-    .laneHeader p{
-      margin: 8px 0 0;
+    .c-sub {
+      margin-top: 7px;
       color: var(--muted);
-      font-size: 13.5px;
-      line-height:1.6;
+      font-size: clamp(12px, 3.4vw, 13.5px);
+      line-height: 1.65;
+      text-align: center;
     }
 
-    .laneNext{
-      position: sticky;
-      bottom: calc(var(--safeB) + 12px);
-      width:min(920px, 92vw);
-      margin: 18px auto 0;
-      display:flex;
-      justify-content:center;
-      pointer-events:none;
-    }
-    .laneNext .btn{
-      pointer-events:auto;
-      background: linear-gradient(180deg, rgba(255,214,166,.75), rgba(255,111,177,.40));
-      color:#1b0b16;
-      border-color: rgba(255,255,255,.22);
-    }
-    .laneNext .btn:disabled{
-      opacity:.55;
-      cursor:not-allowed;
-      box-shadow:none;
-    }
-
-    /* ring */
-    .ringWrap{
-      width: min(920px, 92vw);
-      height: min(60vh, 480px);
-      margin: 16px auto 0;
-      perspective: 1400px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.10);
-      box-shadow: 0 26px 90px rgba(0,0,0,.45);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      touch-action: pan-y;
-    }
-    .ring{
-      width:100%;
-      height:100%;
-      position:relative;
-      transform-style: preserve-3d;
-      will-change: transform;
-      transform: translateZ(0);
-    }
-    .ringItem{
-      position:absolute;
-      left:50%;
-      top:50%;
-      width: 240px;
-      height: 340px;
-      margin:-170px -120px;
-      border-radius: 26px;
-      overflow:hidden;
-      cursor:pointer;
+    input[type="text"] {
+      width: 100%;
+      height: 48px;
+      border-radius: 13px;
       border: 1px solid rgba(255,255,255,.18);
-      background-size:cover;
-      background-position:center;
-      box-shadow: 0 30px 90px rgba(0,0,0,.55);
-      transition: filter .35s ease, transform .35s ease, opacity .35s ease;
-      -webkit-tap-highlight-color: transparent;
-      transform: translateZ(0);
-    }
-    .ringItem::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.74));
-    }
-    .ringLabel{
-      position:absolute;
-      bottom:14px;
-      left:14px;
-      right:14px;
-      z-index:2;
-      padding: 12px 12px;
-      border-radius: 18px;
       background: rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    .ringLabel .k{
+      color: var(--ink);
       font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing:.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.80);
-    }
-    .ringLabel .v{
-      margin-top: 6px;
-      font-family: var(--serif);
       font-size: 18px;
-      line-height:1.2;
-    }
-    .ringItem.active{
-      filter: saturate(1.08) contrast(1.05);
-      box-shadow: 0 40px 120px rgba(255,111,177,.28);
-      transform: scale(1.08);
-      z-index: 6;
-    }
-    .ringItem.dim{ opacity:.72; filter: blur(.2px) brightness(.92); }
-
-    @media (max-width:600px){
-      .ringWrap{ height: min(56vh, 420px); }
-      .ringItem{
-        width:190px;
-        height:270px;
-        margin:-135px -95px;
-      }
-    }
-
-    /* MODALS */
-    .loveModal,
-    .afterLetter,
-    .headsetGate{
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: none;
-      place-items: center;
-      padding: calc(var(--safeT) + 10px) var(--safeR) calc(var(--safeB) + 10px) var(--safeL);
-      background: rgba(5,3,8,.72);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-    .headsetGate{ pointer-events: auto; cursor: pointer; }
-    .headsetGate *{ pointer-events: auto; }
-
-    .loveModal.show,
-    .afterLetter.show,
-    .headsetGate.show{ display:grid; }
-
-    .loveBox{
-      width: min(720px, 95vw);
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.18);
-      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
-      box-shadow: 0 30px 90px rgba(0,0,0,.65);
-    }
-    .loveMedia{
-      position: relative;
-      height: min(46vh, 340px);
-      background-size: cover;
-      background-position: center;
-    }
-    .loveMedia::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.78));
-    }
-    .loveContent{ padding: 14px 14px 16px; }
-
-    .loveTop{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .loveTag{
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(255,214,166,.82);
-    }
-
-    .loveClose{
-      height: 38px;
-      width: 38px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(0,0,0,.20);
-      color: rgba(255,111,177,.95);
-      font-size: 18px;
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .loveTitle{
-      font-family: var(--serif);
-      font-size: 22px;
-      margin: 10px 0 8px;
-    }
-    .loveStory{
-      margin:0;
-      line-height: 1.9;
-      font-size: 14.5px;
-      color: rgba(255,255,255,.92);
-      min-height: 86px;
-      contain: content;
-    }
-
-    .loveActions{
-      margin-top: 12px;
-      display:flex;
-      justify-content:flex-end;
-    }
-    .btnSmall{
-      height: 42px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.20);
-      background: rgba(0,0,0,.16);
-      color: rgba(255,255,255,.90);
-      font-weight: 800;
-      cursor:pointer;
-    }
-
-    /* toast */
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom: calc(var(--safeB) + 14px);
-      transform: translateX(-50%);
-      z-index: 10000;
-      width:min(680px, 92vw);
-      padding: 12px 14px;
-      border-radius: 18px;
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(255,255,255,.16);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      color: rgba(255,255,255,.92);
-      line-height:1.6;
-      display:none;
-      text-align:center;
-    }
-    .toast.show{ display:block; }
-
-    /* letter */
-    .letter{
-      width:min(780px, 96vw);
-      margin:0 auto;
-      border-radius: var(--r);
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
-      border:1px solid var(--stroke);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      position:relative;
-      overflow:hidden;
-      padding: 0;
-    }
-    .letterHeader{
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      padding: 18px 18px 12px;
-      text-align:center;
-      background: linear-gradient(180deg, rgba(10,7,14,.72), rgba(10,7,14,.18));
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      transition: opacity .35s ease, transform .35s ease;
-    }
-    .letterHeader h2{
-      font-family: var(--serif);
-      margin: 0;
-      font-size: 30px;
-      letter-spacing: .4px;
-    }
-    .letterHeader .sub{
-      margin: 8px 0 0;
-      color: rgba(255,255,255,.74);
-      font-size: 13.5px;
-      line-height:1.6;
-    }
-
-    .stanzas{
-      padding: 14px 16px 18px;
-      min-height: 62vh;
-      max-height: min(74vh, 600px);
-      overflow:auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-gutter: stable;
-    }
-    .stanza{
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.14);
-      border-radius: 16px;
-      padding: 14px 14px;
-      margin: 10px 0;
-    }
-    .stanza p{
-      margin: 0;
-      line-height: 1.95;
-      font-size: 15px;
-      letter-spacing: .1px;
-      color: rgba(255,255,255,.92);
-      white-space: normal;
-      contain: content;
-    }
-    .caret{
-      display:inline-block;
-      width: 8px;
-      border-left: 2px solid rgba(255,214,166,.85);
-      margin-left: 4px;
-      transform: translateY(2px);
-      animation: caretBlink 1s infinite ease-in-out;
-    }
-    @keyframes caretBlink{ 0%,100%{opacity:.15} 50%{opacity:1} }
-
-    .headsetBox{
-      width:min(520px, 92vw);
-      border-radius: var(--r);
-      padding: 22px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow: var(--shadow);
-      text-align:center;
-    }
-    .headsetTitle{
-      font-family: var(--serif);
-      font-weight: 800;
-      font-size: 24px;
-      margin: 0 0 10px 0;
-    }
-    .headsetText{
-      color: rgba(255,255,255,.82);
-      line-height: 1.7;
-      font-size: 14px;
-      margin:0;
-    }
-    .headsetHint{
+      letter-spacing: .18em;
+      padding: 0 16px;
+      outline: none;
+      text-align: center;
       margin-top: 14px;
-      font-size: 12px;
-      color: rgba(255,255,255,.70);
-      font-family: var(--mono);
-      letter-spacing:.08em;
+      -webkit-appearance: none;
     }
+    input[type="text"]::placeholder { letter-spacing:.1em; font-size:13px; color:rgba(255,255,255,.35); }
+    input[type="text"]:focus { border-color:rgba(255,111,177,.55); box-shadow:0 0 0 3px rgba(255,111,177,.12); }
 
-    /* after-letter */
-    .afterLetterBox{
-      width:min(560px, 94vw);
-      border-radius: var(--r);
-      padding: 18px 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow: var(--shadow);
-      text-align:center;
-    }
-    .afterLetterBox h3{
-      font-family: var(--serif);
-      margin: 0;
-      font-size: 26px;
-    }
-    .afterLetterBox p{
-      margin: 10px 0 0;
-      color: rgba(255,255,255,.82);
-      line-height: 1.7;
-      font-size: 14px;
-    }
-    .afterLetterBox .row{ margin-top: 14px; }
-
-    /* scratch */
-    .scratchWrap{ width:min(920px, 92vw); text-align:center; margin:0 auto; }
-    .scratchWrap h2{ font-family: var(--serif); margin: 0; font-size: 34px; }
-    .scratchWrap p{
-      margin: 10px 0 0;
-      color: rgba(255,255,255,.74);
-      line-height:1.6;
-      font-size: 13.5px;
-    }
-    .scratchStage{
-      margin: 18px auto 0;
-      width:min(860px, 92vw);
-      border-radius: 28px;
-      position:relative;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.14);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      height: min(60vh, 420px);
-      display:grid;
-      place-items:center;
-      padding: 14px;
-    }
-    .scratchStage .under{
-      position:absolute;
-      inset:0;
-      z-index:1;
-      display:grid;
-      place-items:center;
-      padding: 14px;
-      background:
-        radial-gradient(800px 420px at 60% 30%, rgba(255,214,166,.14), transparent 60%),
-        radial-gradient(720px 520px at 30% 80%, rgba(255,111,177,.16), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.5));
-    }
-    #scratch{
-      position:absolute;
-      inset:0;
-      z-index:5;
-      pointer-events:auto;
-      touch-action:none;
-    }
-
-    /* =========================================================
-       TICKET (rectangular, not too big on phone)
-       + "robek kertas" feel on right edge (stub tear)
-       + BARCODE PANJANG (VERTICAL) di sisi kanan dekat robekan
-       ========================================================= */
-
-    .ticketWrap{ width:min(920px, 92vw); text-align:center; margin:0 auto; }
-    .ticketWrap h2{ font-family: var(--serif); margin: 0; font-size: 38px; }
-    .ticketWrap p{
-      margin: 10px auto 0;
-      max-width: 620px;
-      color: rgba(255,255,255,.74);
-      line-height:1.6;
-      font-size: 13.5px;
-    }
-
-    .ticketNew{
-      width:min(860px, 92vw); /* lebih kecil di HP */
-      border-radius: 26px;
-      overflow:hidden;
-      position:relative;
-      display:grid;
-      grid-template-columns: 1fr 240px; /* stub lebih ramping */
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow:
-        0 40px 120px rgba(0,0,0,.78),
-        0 0 50px rgba(255,111,177,.12);
-      background:
-        radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
-        linear-gradient(135deg, rgba(255,111,177,.22), rgba(185,166,255,.18) 45%, rgba(255,214,166,.18)),
-        linear-gradient(135deg, #0b0610, #140a10 40%, #0b0610);
-      background-size: 22px 22px, auto, auto;
-      background-position: 0 0, center, center;
-      transform-style: preserve-3d;
-      transition: transform .14s ease;
-      margin: 16px auto 0;
-    }
-
-    /* holographic sweep */
-    .ticketNew::before{
-      content:"";
-      position:absolute;
-      inset:-40px;
-      background:
-        radial-gradient(closest-side at 18% 18%, rgba(255,111,177,.22), transparent 60%),
-        radial-gradient(closest-side at 82% 30%, rgba(255,214,166,.18), transparent 62%),
-        radial-gradient(closest-side at 55% 90%, rgba(185,166,255,.12), transparent 60%);
-      filter: blur(10px);
-      opacity:.9;
-      pointer-events:none;
-      z-index:0;
-    }
-    .ticketNew::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(115deg,
-          transparent 0%,
-          rgba(255,255,255,.08) 30%,
-          rgba(255,214,166,.14) 45%,
-          rgba(255,111,177,.14) 55%,
-          rgba(255,255,255,.07) 70%,
-          transparent 100%);
-      opacity:.55;
-      mix-blend-mode: screen;
-      pointer-events:none;
-      z-index:0;
-      animation: holoMove 6.5s ease-in-out infinite;
-    }
-    @keyframes holoMove{
-      0%,100%{ transform: translateX(-6%) }
-      50%{ transform: translateX(6%) }
-    }
-
-    .tMain, .tStub{
-      position:relative;
-      z-index:2;
-      padding: 18px 18px;
-      min-width:0;
-      display:flex;
-      flex-direction:column;
-      gap: 14px;
-    }
-
-    /* perforation divider like tear line */
-    .tStub{
-      border-left: 2px dashed rgba(255,255,255,.28);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.06));
-      padding-left: 14px;
-      padding-right: 14px;
-      /* supaya konten stub rapi: barcode strip di kiri stub */
-      display:grid;
-      grid-template-columns: 64px 1fr; /* kolom barcode | konten stub */
-      gap: 12px;
-      align-items: start;
-    }
-
-    /* notch circle */
-    .tNotch{
-      position:absolute;
-      top: 50%;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      transform: translateY(-50%);
-      background: rgba(7,6,11,1);
-      border: 1px solid rgba(255,255,255,.16);
-      z-index:3;
-      box-shadow: 0 18px 50px rgba(0,0,0,.55);
-    }
-    .tNotch.left{ right: calc(100% - 13px); }
-
-    .tTop{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .tBrand{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      min-width:0;
-    }
-    .tBrand .small{
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing:.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.72);
-    }
-    .tBrand .big{
-      font-family: var(--serif);
-      font-size: 28px;
-      line-height:1.08;
-      letter-spacing:.2px;
-      color: rgba(255,255,255,.95);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow: ellipsis;
-    }
-
-    .tBadge{
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing:.18em;
-      text-transform: uppercase;
-      padding: 8px 12px;
-      border-radius: 999px;
-      color: #130811;
-      background: linear-gradient(180deg, rgba(255,214,166,.95), rgba(255,111,177,.55));
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      height: 46px; min-width: 110px;
+      border-radius: 999px; padding: 0 20px;
       border: 1px solid rgba(255,255,255,.22);
-      box-shadow: 0 14px 45px rgba(255,111,177,.14);
-      white-space:nowrap;
+      background: linear-gradient(160deg, rgba(255,111,177,.82), rgba(255,111,177,.48));
+      color: #1b0b16; font-family: var(--sans); font-weight: 700; font-size: 13.5px;
+      cursor: pointer;
+      box-shadow: 0 12px 40px rgba(255,111,177,.22);
+      transition: transform .12s, opacity .12s;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none; touch-action: manipulation;
+    }
+    .btn:active { transform: scale(.96); opacity:.9; }
+    .btn:disabled { opacity:.4; pointer-events:none; }
+    .btn-gold { background: linear-gradient(160deg, rgba(255,214,166,.88), rgba(255,111,177,.42)); }
+
+    .row-c { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:14px; }
+
+    @keyframes shake {
+      0%,100%{transform:translateX(0)}
+      20%{transform:translateX(-6px)} 40%{transform:translateX(6px)}
+      60%{transform:translateX(-4px)} 80%{transform:translateX(4px)}
+    }
+    .shake { animation: shake .36s ease; }
+
+    /* ── BOOT ── */
+    .bootBox {
+      width: min(400px, 88vw);
+      text-align: center; border-radius: var(--r); padding: 24px 18px;
+      background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      border:1px solid var(--stroke); box-shadow:var(--shadow);
+      backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+    }
+    .boot-title { font-family:var(--serif); font-size:25px; font-weight:700; }
+    .boot-line  { font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:var(--muted); margin-top:14px; min-height:18px; }
+    .dots { margin-top:14px; }
+    .dot {
+      display:inline-block; width:6px; height:6px; border-radius:50%;
+      background:var(--rose); box-shadow:0 0 14px rgba(255,111,177,.55);
+      margin:0 4px; animation:blink 1.1s ease-in-out infinite;
+    }
+    .dot:nth-child(2){animation-delay:.18s} .dot:nth-child(3){animation-delay:.36s}
+    @keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+
+    /* ════════════════════════════════════
+       MEMORY LANE — 3D RING (mobile-fit)
+       ════════════════════════════════════ */
+    #screen-lane {
+      justify-content: flex-start;
+      padding-top: calc(var(--safeT) + 6px);
+      padding-bottom: calc(var(--safeB) + 4px);
+      gap: 0;
+      overflow: hidden;
     }
 
-    .tHeadline{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
+    .lane-header {
+      flex-shrink: 0;
+      text-align: center;
+      padding: 0 16px 0;
     }
-    .tTo{
+    .lane-header h2 {
       font-family: var(--serif);
-      font-size: 44px;
-      margin:0;
-      line-height: 1;
-      letter-spacing: 1px;
-      color: #ffd6a6;
-      text-shadow:
-        0 0 24px rgba(255,214,166,.18),
-        0 0 70px rgba(255,111,177,.14);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow: ellipsis;
-      max-width: 100%;
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 700;
+      line-height: 1.1;
     }
-    .tMeta{
-      margin: 0;
-      color: rgba(255,255,255,.84);
-      font-size: 13px;
-      line-height:1.5;
-      opacity:.95;
+    .lane-header p {
+      color: var(--muted);
+      font-size: clamp(11px, 3.2vw, 13px);
+      line-height: 1.55;
+      margin-top: 4px;
     }
 
-    .tGrid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 10px;
+    /* ring viewport */
+    .ring-wrap {
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+      position: relative;
+      overflow: hidden;
+      perspective: 1100px;
+      touch-action: pan-y;
+      cursor: grab;
     }
-    .tCell{
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.22);
-      border-radius: 16px;
-      padding: 10px 10px;
-      text-align:left;
-      min-width:0;
-    }
-    .tCell .k{
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing:.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.64);
-    }
-    .tCell .v{
-      margin-top: 6px;
-      color: rgba(255,255,255,.92);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .02em;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow: ellipsis;
-    }
+    .ring-wrap:active { cursor: grabbing; }
 
-    .tFooter{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap:wrap;
-      margin-top: 2px;
-    }
-    .tSerial{
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing:.14em;
-      color: rgba(255,255,255,.70);
-    }
-    .tNote{
-      font-size: 12px;
-      color: rgba(255,255,255,.66);
-    }
-
-    /* Stub content layout */
-    .stubLeft{
-      display:flex;
-      flex-direction:column;
-      align-items:stretch;
-      gap: 10px;
-      padding-top: 2px;
-    }
-    .stubRight{
-      display:flex;
-      flex-direction:column;
-      align-items:stretch;
-      gap: 12px;
-      min-width:0;
-    }
-
-    /* "ROB" barcode strip: vertical long, near tear line */
-    .barcodeTall{
+    .ring {
       width: 100%;
       height: 100%;
-      min-height: 230px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.18);
-      background-color: rgba(255,255,255,.07);
       position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .ring-item {
+      position: absolute;
+      left: 50%; top: 50%;
+      /* size tuned for 6–6.5" phones */
+      width: 185px; height: 260px;
+      margin: -130px -92px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,.17);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 22px 70px rgba(0,0,0,.55);
+      transition: filter .3s, opacity .3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ring-item::after {
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.72));
+    }
+    .ring-label {
+      position:absolute; bottom:10px; left:10px; right:10px; z-index:2;
+      padding:10px 11px; border-radius:14px;
+      background:rgba(0,0,0,.28); border:1px solid rgba(255,255,255,.13);
+      backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    }
+    .ring-label .rk { font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:rgba(255,255,255,.75); }
+    .ring-label .rv { font-family:var(--serif); font-size:clamp(13px,3.8vw,16px); margin-top:4px; line-height:1.25; }
+
+    .ring-item.active {
+      filter: saturate(1.1) contrast(1.05);
+      box-shadow: 0 30px 90px rgba(255,111,177,.28);
+    }
+    .ring-item.dim { opacity:.68; filter:blur(.25px) brightness(.9); }
+
+    /* bottom bar */
+    .lane-bottom {
+      flex-shrink: 0;
+      width: 100%;
+      padding: 8px 16px calc(var(--safeB) + 2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── LOVE MODAL ── */
+    .love-modal {
+      position:fixed; inset:0; z-index:9000;
+      display:none; place-items:center;
+      padding: calc(var(--safeT)+8px) var(--safeR) calc(var(--safeB)+8px) var(--safeL);
+      background:rgba(4,2,8,.76);
+      backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    }
+    .love-modal.show { display:grid; }
+
+    .love-box {
+      width: min(480px, 94vw);
+      border-radius: 22px; overflow:hidden;
+      border:1px solid rgba(255,255,255,.15);
+      background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.05));
+      box-shadow:0 24px 72px rgba(0,0,0,.65);
+    }
+    .love-media {
+      height: min(38vh, 240px);
+      background-size:cover; background-position:center; position:relative;
+    }
+    .love-media::after {
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.8));
+    }
+    .love-body { padding:12px 13px 14px; }
+    .love-top { display:flex; align-items:center; justify-content:space-between; }
+    .love-tag { font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,214,166,.82); }
+    .love-close {
+      width:36px; height:36px; border-radius:50%;
+      border:1px solid rgba(255,255,255,.2); background:rgba(0,0,0,.2);
+      color:var(--rose); font-size:15px; display:grid; place-items:center;
+      cursor:pointer; -webkit-tap-highlight-color:transparent;
+    }
+    .love-title { font-family:var(--serif); font-size:clamp(17px,4.8vw,21px); font-weight:700; margin-top:8px; line-height:1.25; }
+    .love-story { margin-top:7px; font-size:clamp(12.5px,3.5vw,14px); line-height:1.95; color:rgba(255,255,255,.9); min-height:60px; }
+    .love-actions { margin-top:10px; display:flex; justify-content:flex-end; gap:8px; }
+    .btn-sm {
+      height:38px; padding:0 13px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.17); background:rgba(0,0,0,.18);
+      color:rgba(255,255,255,.88); font-weight:700; font-size:12.5px;
+      cursor:pointer; -webkit-tap-highlight-color:transparent;
+    }
+
+    .caret {
+      display:inline-block; width:7px;
+      border-left:2px solid rgba(255,214,166,.85);
+      margin-left:3px; transform:translateY(2px);
+      animation:caretBlink 1s ease-in-out infinite;
+    }
+    @keyframes caretBlink{0%,100%{opacity:.15}50%{opacity:1}}
+
+    /* ── TOAST ── */
+    .toast {
+      position:fixed; left:50%; bottom:calc(var(--safeB)+12px);
+      transform:translateX(-50%); z-index:10000;
+      width:min(560px,88vw); padding:11px 14px; border-radius:15px;
+      background:rgba(0,0,0,.38); border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      color:rgba(255,255,255,.92); font-size:clamp(12.5px,3.5vw,13.5px);
+      line-height:1.6; text-align:center; display:none; pointer-events:none;
+    }
+    .toast.show { display:block; }
+
+    /* ── HEADSET GATE ── */
+    .headset-gate {
+      position:fixed; inset:0; z-index:9000;
+      display:none; place-items:center;
+      padding:calc(var(--safeT)+8px) var(--safeR) calc(var(--safeB)+8px) var(--safeL);
+      background:rgba(4,2,8,.78);
+      backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      cursor:pointer;
+    }
+    .headset-gate.show { display:grid; }
+    .headset-box {
+      width:min(440px,90vw); border-radius:var(--r); padding:22px 18px;
+      background:linear-gradient(160deg,rgba(255,255,255,.11),rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.16); box-shadow:var(--shadow); text-align:center;
+    }
+    .headset-title { font-family:var(--serif); font-size:25px; font-weight:700; }
+    .headset-text  { color:rgba(255,255,255,.78); font-size:clamp(13px,3.7vw,14px); line-height:1.75; margin-top:9px; }
+    .headset-hint  { margin-top:14px; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:rgba(255,255,255,.5); }
+
+    /* ── LETTER ── */
+    #screen-letter { padding:0; align-items:stretch; justify-content:flex-start; }
+    .letter-shell  { width:100%; height:100%; max-width:640px; margin:0 auto; display:flex; flex-direction:column; overflow:hidden; }
+    .letter-header {
+      flex-shrink:0;
+      padding:calc(var(--safeT)+8px) var(--safeR) 10px var(--safeL);
+      text-align:center;
+      background:linear-gradient(180deg,rgba(8,5,14,.85),rgba(8,5,14,.12));
+      backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+      transition: opacity .35s, transform .35s;
+    }
+    .letter-header h2 { font-family:var(--serif); font-size:clamp(21px,5.8vw,28px); font-weight:700; }
+    .letter-header .lh-sub { color:rgba(255,255,255,.65); font-size:clamp(11.5px,3.2vw,13px); margin-top:4px; }
+
+    .stanzas {
+      flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch;
+      padding:12px var(--safeR) calc(var(--safeB)+12px) var(--safeL);
+    }
+    .stanzas::-webkit-scrollbar{width:5px;}
+    .stanzas::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:999px;}
+
+    .stanza { border:1px solid rgba(255,255,255,.09); background:rgba(0,0,0,.14); border-radius:14px; padding:12px 13px; margin-bottom:9px; }
+    .stanza p { font-size:clamp(13px,3.7vw,14.5px); line-height:2; color:rgba(255,255,255,.92); white-space:pre-wrap; }
+
+    /* ── AFTER LETTER ── */
+    .after-letter {
+      position:fixed; inset:0; z-index:9500;
+      display:none; place-items:center;
+      padding:calc(var(--safeT)+8px) var(--safeR) calc(var(--safeB)+8px) var(--safeL);
+      background:rgba(4,2,8,.76);
+      backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    }
+    .after-letter.show { display:grid; }
+    .after-box {
+      width:min(440px,90vw); border-radius:var(--r); padding:20px 16px;
+      background:linear-gradient(160deg,rgba(255,255,255,.11),rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.16); box-shadow:var(--shadow); text-align:center;
+    }
+    .after-box h3 { font-family:var(--serif); font-size:clamp(21px,5.8vw,27px); font-weight:700; }
+    .after-box p  { color:rgba(255,255,255,.78); font-size:clamp(12.5px,3.6vw,14px); line-height:1.75; margin-top:9px; }
+
+    /* ── SCRATCH ── */
+    #screen-scratch {
+      overflow:hidden;
+      padding:calc(var(--safeT)+6px) 14px calc(var(--safeB)+6px);
+      gap:8px;
+    }
+    .scratch-header { text-align:center; flex-shrink:0; }
+    .scratch-header h2 { font-family:var(--serif); font-size:clamp(22px,6vw,32px); font-weight:700; }
+    .scratch-header p  { color:var(--muted); font-size:clamp(11.5px,3.2vw,13px); margin-top:5px; }
+
+    .scratch-stage {
+      flex:1; width:100%; max-width:560px;
+      border-radius:22px; position:relative; overflow:hidden;
+      border:1px solid rgba(255,255,255,.11);
+      background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .scratch-under {
+      position:absolute; inset:0; z-index:1;
+      display:flex; align-items:center; justify-content:center; padding:8px;
+      background:
+        radial-gradient(ellipse 500px 350px at 65% 25%,rgba(255,214,166,.11),transparent 60%),
+        radial-gradient(ellipse 420px 420px at 25% 80%,rgba(255,111,177,.12),transparent 60%),
+        linear-gradient(160deg,rgba(0,0,0,.2),rgba(0,0,0,.5));
       overflow:hidden;
     }
-    .barcodeTall::before{
-      content:"";
-      position:absolute;
-      inset: 10px 12px;
-      border-radius: 12px;
+    #scratch { position:absolute; inset:0; z-index:5; touch-action:none; }
+
+    .end-note { flex-shrink:0; color:var(--muted); font-size:clamp(11.5px,3.1vw,12.5px); text-align:center; padding:0 12px; }
+
+    /* ════════════════════════════════════
+       TICKET CARD
+       ════════════════════════════════════ */
+    #screen-ticket {
+      overflow-y:auto; -webkit-overflow-scrolling:touch;
+      padding:calc(var(--safeT)+8px) 12px calc(var(--safeB)+14px);
+      gap:10px; align-items:center; justify-content:flex-start;
+    }
+    .ticket-header { text-align:center; flex-shrink:0; width:100%; }
+    .ticket-header h2 { font-family:var(--serif); font-size:clamp(24px,6.5vw,36px); font-weight:700; }
+    .ticket-header p  { color:var(--muted); font-size:clamp(11.5px,3.2vw,13px); margin-top:5px; }
+
+    .ticket-card {
+      width: min(640px, 94vw);
+      border-radius: 22px; overflow:hidden;
+      border:1px solid rgba(255,255,255,.17);
+      box-shadow:0 30px 90px rgba(0,0,0,.72),0 0 40px rgba(255,111,177,.09);
       background:
-        repeating-linear-gradient(
-          90deg, /* garis vertikal seperti barcode kertas */
-          rgba(255,255,255,.92) 0px,
-          rgba(255,255,255,.92) 2px,
-          rgba(0,0,0,0) 2px,
-          rgba(0,0,0,0) 6px
-        );
-      opacity: .95;
-      filter: drop-shadow(0 0 10px rgba(255,214,166,.10));
+        radial-gradient(circle 1px at 1px 1px,rgba(255,255,255,.08) 1px,transparent 0),
+        linear-gradient(135deg,rgba(255,111,177,.17),rgba(185,166,255,.14) 48%,rgba(255,214,166,.15)),
+        linear-gradient(135deg,#0c0712,#160c14 40%,#0c0712);
+      background-size:20px 20px,auto,auto;
+      position:relative; flex-shrink:0;
+      transition:transform .15s;
     }
-    .barcodeTall::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.25));
-      pointer-events:none;
+    .ticket-card::before {
+      content:""; position:absolute; inset:-28px;
+      background:
+        radial-gradient(closest-side at 18% 18%,rgba(255,111,177,.16),transparent 60%),
+        radial-gradient(closest-side at 80% 28%,rgba(255,214,166,.13),transparent 60%),
+        radial-gradient(closest-side at 52% 88%,rgba(185,166,255,.09),transparent 60%);
+      filter:blur(8px); z-index:0; pointer-events:none;
     }
+    .ticket-card::after {
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.07) 30%,rgba(255,214,166,.11) 45%,rgba(255,111,177,.10) 55%,rgba(255,255,255,.05) 70%,transparent 100%);
+      mix-blend-mode:screen; z-index:0; pointer-events:none;
+      animation:holoMove 7s ease-in-out infinite;
+    }
+    @keyframes holoMove{0%,100%{transform:translateX(-5%)}50%{transform:translateX(5%)}}
 
-    .stubBox{
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.22);
-      border-radius: 18px;
-      padding: 12px 12px;
-    }
-    .stubLabel{
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing:.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.70);
-      margin-bottom: 8px;
-    }
+    .ticket-inner { position:relative; z-index:2; display:flex; flex-direction:column; }
 
-    .qrWrap{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      gap: 8px;
+    .t-main { padding:16px 16px 14px; display:flex; flex-direction:column; gap:10px; }
+    .t-top  { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
+    .t-brand .t-small { font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.65); }
+    .t-brand .t-big   { font-family:var(--serif); font-size:clamp(18px,5vw,24px); font-weight:700; margin-top:3px; line-height:1.1; }
+    .t-badge {
+      font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+      padding:6px 11px; border-radius:999px; color:#130811;
+      background:linear-gradient(160deg,rgba(255,214,166,.96),rgba(255,111,177,.5));
+      border:1px solid rgba(255,255,255,.22); white-space:nowrap; flex-shrink:0;
     }
-    .igQrImg{
-      width: 112px;
-      height: 112px;
-      object-fit: contain;
-      border-radius: 14px;
-      background: #fff;
-      padding: 6px;
-      cursor:pointer;
-      box-shadow: 0 0 20px rgba(255,111,177,.18);
-      max-width: 100%;
-    }
-    .qrText{
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing:.18em;
-      color: rgba(255,255,255,.70);
-      text-transform: uppercase;
-    }
+    .t-dest { font-family:var(--serif); font-size:clamp(30px,8vw,48px); font-weight:700; line-height:1; color:var(--gold); letter-spacing:1px; }
+    .t-meta { color:rgba(255,255,255,.78); font-size:clamp(11px,3vw,12.5px); margin-top:2px; }
 
-    .stubBig{
-      font-family: var(--mono);
-      letter-spacing:.1em;
-      color:#ffd6a6;
-      font-size: 12.5px;
-      word-break: break-word;
-    }
+    .t-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
+    .t-cell { border:1px solid rgba(255,255,255,.11); background:rgba(0,0,0,.22); border-radius:13px; padding:8px 9px; }
+    .t-cell .ck { font-family:var(--mono); font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+    .t-cell .cv { margin-top:4px; font-size:clamp(10px,2.8vw,12.5px); font-weight:700; color:rgba(255,255,255,.9); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-    /* mobile tuning: keep rectangular (side-by-side), shrink text & stub */
-    @media (max-width: 680px){
-      .ticketNew{
-        width: min(860px, 90vw);
-        grid-template-columns: 1fr 200px;
-      }
-      .tTo{ font-size: 36px; }
-      .tGrid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .igQrImg{ width: 104px; height: 104px; }
-      .barcodeTall{ min-height: 210px; }
-      .scratchStage{ height: min(62vh, 440px); }
-      .tStub{
-        grid-template-columns: 58px 1fr;
-        gap: 10px;
-      }
-      .tMain, .tStub{
-        padding: 16px 14px;
-      }
-    }
+    .t-footer { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:5px; }
+    .t-serial { font-family:var(--mono); font-size:9.5px; letter-spacing:.13em; color:rgba(255,255,255,.58); }
+    .t-note   { font-size:10.5px; color:rgba(255,255,255,.58); }
 
-    @media (max-width: 420px){
-      .ticketNew{ grid-template-columns: 1fr 180px; }
-      .tTo{ font-size: 32px; }
-      .barcodeTall{ min-height: 190px; }
-      .tBrand .big{ font-size: 26px; }
+    /* perforation */
+    .t-perf {
+      height:1px; border:none;
+      border-top:2px dashed rgba(255,255,255,.2);
+      position:relative;
     }
-
-    .endNote{
-      margin-top: 16px;
-      color: rgba(255,255,255,.70);
-      font-size: 13px;
-      text-align:center;
+    .t-perf::before,.t-perf::after {
+      content:""; position:absolute; top:50%; transform:translateY(-50%);
+      width:18px; height:18px; border-radius:50%;
+      background:var(--bg0); border:1px solid rgba(255,255,255,.13);
     }
+    .t-perf::before{left:-9px;} .t-perf::after{right:-9px;}
 
-    /* scrollbars */
-    .lane::-webkit-scrollbar,
-    .stanzas::-webkit-scrollbar{ width: 10px; }
-    .lane::-webkit-scrollbar-thumb,
-    .stanzas::-webkit-scrollbar-thumb{
-      background: rgba(255,255,255,.10);
-      border-radius: 999px;
-      border: 2px solid rgba(0,0,0,0);
-      background-clip: padding-box;
+    /* stub */
+    .t-stub { padding:12px 16px 16px; display:grid; grid-template-columns:48px 1fr; gap:10px; }
+    .barcode-v {
+      border-radius:12px; border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.06); position:relative; overflow:hidden; min-height:140px;
+    }
+    .barcode-v::before {
+      content:""; position:absolute; inset:7px 9px; border-radius:9px;
+      background:repeating-linear-gradient(90deg,rgba(255,255,255,.9) 0px,rgba(255,255,255,.9) 2px,transparent 2px,transparent 5px);
+    }
+    .barcode-v::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.22)); }
+
+    .stub-content { display:flex; flex-direction:column; gap:8px; }
+    .stub-box { border:1px solid rgba(255,255,255,.11); background:rgba(0,0,0,.2); border-radius:13px; padding:9px 11px; }
+    .stub-lbl { font-family:var(--mono); font-size:9.5px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.62); margin-bottom:5px; }
+    .stub-val { font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--gold); word-break:break-word; }
+
+    .qr-wrap { display:flex; flex-direction:column; align-items:center; gap:5px; }
+    .qr-img  { width:80px; height:80px; object-fit:contain; border-radius:11px; background:#fff; padding:5px; cursor:pointer; box-shadow:0 0 16px rgba(255,111,177,.15); }
+    .qr-lbl  { font-family:var(--mono); font-size:9.5px; letter-spacing:.17em; color:rgba(255,255,255,.62); text-transform:uppercase; }
+
+    .ticket-end-note { flex-shrink:0; color:var(--muted); font-size:clamp(11.5px,3.1vw,12.5px); text-align:center; padding:0 12px; }
+
+    /* wider: side-by-side stub */
+    @media (min-width:480px) {
+      .ticket-inner { flex-direction:row; align-items:stretch; }
+      .t-main { flex:1; }
+      .t-perf { width:1px; height:auto; border:none; border-left:2px dashed rgba(255,255,255,.2); margin:0; }
+      .t-perf::before { top:-9px; left:50%; transform:translateX(-50%); }
+      .t-perf::after  { bottom:-9px; top:auto; left:50%; transform:translateX(-50%); }
+      .t-stub { width:180px; flex-shrink:0; padding:16px 14px; }
+    }
+    @media (min-width:620px) {
+      .ring-item { width:210px; height:295px; margin:-147px -105px; }
     }
   </style>
 </head>
 
 <body>
-  <canvas id="sparkle"></canvas>
+<canvas id="sparkle"></canvas>
 
-  <!-- Love Modal -->
-  <div class="loveModal" id="loveModal">
-    <div class="loveBox" role="dialog" aria-modal="true" aria-label="Cerita momen">
-      <div class="loveMedia" id="loveMedia"></div>
-
-      <div class="loveContent">
-        <div class="loveTop">
-          <div class="loveTag" id="loveTag">MOMEN</div>
-          <button class="loveClose" id="loveClose" aria-label="tutup">❤</button>
-        </div>
-
-        <div class="loveTitle" id="loveTitle">…</div>
-        <p class="loveStory" id="loveStory"></p>
-
-        <div class="loveActions">
-          <button class="btnSmall" id="loveSurprise">Kejutan kecil ✨</button>
-        </div>
+<!-- LOVE MODAL -->
+<div class="love-modal" id="loveModal" role="dialog" aria-modal="true">
+  <div class="love-box">
+    <div class="love-media" id="loveMedia"></div>
+    <div class="love-body">
+      <div class="love-top">
+        <div class="love-tag" id="loveTag">MOMEN</div>
+        <button class="love-close" id="loveClose" aria-label="tutup">❤</button>
+      </div>
+      <div class="love-title" id="loveTitle">…</div>
+      <p class="love-story" id="loveStory"></p>
+      <div class="love-actions">
+        <button class="btn-sm" id="loveSurprise">Kejutan kecil ✨</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Romantic notice after letter -->
-  <div class="afterLetter" id="afterLetter">
-    <div class="afterLetterBox" role="dialog" aria-modal="true" aria-label="Lanjut ke kejutan">
-      <h3>Sayang…</h3>
-      <p id="afterLetterText">
-        Aku sudah selesai menuliskan semuanya. Tapi belum selesai cerita kita…<br/>
-        Setelah ini, ada kejutan kecil yang aku simpan buat kamu. ✨
-      </p>
-      <div class="row" style="justify-content:center;">
-        <button class="btn" id="btnToSurprise">Lanjut ke kejutan ✨</button>
+<!-- AFTER LETTER -->
+<div class="after-letter" id="afterLetter" role="dialog" aria-modal="true">
+  <div class="after-box">
+    <h3>Sayang…</h3>
+    <p>Aku sudah selesai menuliskan semuanya.<br/>Tapi belum selesai cerita kita…<br/>Ada kejutan kecil buat kamu. ✨</p>
+    <div class="row-c"><button class="btn btn-gold" id="btnToSurprise">Lanjut ke kejutan ✨</button></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status"></div>
+
+<div class="app" id="app">
+
+  <!-- 1. GATEWAY -->
+  <section class="screen active" id="screen-gateway">
+    <div class="card" id="gatewayCard">
+      <div class="c-title">The Sweet Gateway</div>
+      <p class="c-sub">Masukkan tanggal spesial kita ya… biar pintu kenangan kebuka pelan-pelan 💗</p>
+      <input id="dateInput" type="text" inputmode="numeric" placeholder="DDMMYYYY" maxlength="8" autocomplete="off" />
+      <div class="row-c"><button class="btn" id="btnOpen">Buka Pintu 💗</button></div>
+    </div>
+  </section>
+
+  <!-- 2. BOOT -->
+  <section class="screen" id="screen-boot">
+    <div class="bootBox">
+      <div class="boot-title">Sedikit lagi…</div>
+      <div class="boot-line" id="bootLine"></div>
+      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    </div>
+  </section>
+
+  <!-- 3. MEMORY LANE -->
+  <section class="screen" id="screen-lane">
+    <div class="lane-header">
+      <h2>Memory Lane</h2>
+      <p>Geser untuk putar, tap foto depan untuk baca ceritanya.</p>
+    </div>
+
+    <div class="ring-wrap" id="ringWrap">
+      <div class="ring" id="ring"></div>
+    </div>
+
+    <div class="lane-bottom">
+      <button class="btn" id="btnToLetter" disabled>Lanjut ✨</button>
+    </div>
+  </section>
+
+  <!-- 4. LETTER -->
+  <section class="screen" id="screen-letter">
+    <div class="headset-gate" id="headsetGate">
+      <div class="headset-box">
+        <div class="headset-title">Sebentar ya…</div>
+        <p class="headset-text">Kalau bisa, pakai <b>headset</b> dulu ya.<br/>Aku ingin kamu benar-benar mendengarkanku. 🎧</p>
+        <div class="headset-hint">Ketuk di mana saja untuk mulai…</div>
       </div>
     </div>
-  </div>
-
-  <div class="toast" id="toast"></div>
-
-  <div class="app" id="app">
-    <!-- 1) GATEWAY -->
-    <section class="screen active" id="screen-gateway">
-      <div class="card" id="gatewayCard">
-        <h1 class="title">The Sweet Gateway</h1>
-        <p class="subtitle">Masukkan tanggal spesial itu ya… biar pintu kenangan kebuka pelan-pelan 💗</p>
-
-        <div class="row" style="width:100%; margin-top:16px;">
-          <input id="dateInput" type="text" inputmode="numeric" placeholder="DDMMYYYY" maxlength="8" />
-        </div>
-
-        <div class="row" style="justify-content:center;">
-          <button class="btn" id="btnOpen">Buka Pintu</button>
-        </div>
+    <div class="letter-shell">
+      <div class="letter-header" id="letterHeader">
+        <h2>Untuk Kamu</h2>
+        <p class="lh-sub">Tolong baca pelan-pelan ya… 💗</p>
       </div>
-    </section>
+      <div class="stanzas" id="stanzas"></div>
+    </div>
+  </section>
 
-    <!-- 2) BOOT -->
-    <section class="screen" id="screen-boot">
-      <div class="bootWrap">
-        <div class="bootBox">
-          <div class="bootTitle">Sedikit lagi…</div>
-          <div class="bootLine" id="bootLine"></div>
-          <div style="margin-top:14px;">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3) MEMORY LANE -->
-    <section class="screen" id="screen-lane" style="align-items:stretch;">
-      <div class="lane">
-        <div class="laneInner">
-          <div class="laneHeader">
-            <h2>Memory Lane</h2>
-            <p>Geser pelan ya… dan tap foto yang paling depan.</p>
-          </div>
-
-          <div class="ringWrap" id="ringWrap">
-            <div class="ring" id="ring"></div>
-          </div>
-
-          <div class="laneNext">
-            <button class="btn" id="btnToLetter" disabled>Lanjut</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4) LETTER -->
-    <section class="screen" id="screen-letter">
-      <div class="headsetGate" id="headsetGate">
-        <div class="headsetBox" role="dialog" aria-modal="true" aria-label="Pakai headset">
-          <div class="headsetTitle">Sebentar ya…</div>
-          <p class="headsetText">
-            Kalau bisa, pakai <b>headset</b> dulu.<br/>
-            Aku ingin kamu benar-benar mendengarkanku.
-          </p>
-          <div class="headsetHint">Ketuk di mana saja untuk mulai…</div>
-        </div>
-      </div>
-
-      <div class="letter">
-        <div class="letterHeader" id="letterHeader">
-          <h2>Untuk Kamu</h2>
-          <p class="sub">Tolong baca pelan-pelan ya…</p>
-        </div>
-        <div class="stanzas" id="stanzas"></div>
-      </div>
-    </section>
-
-    <!-- 5) SCRATCH -->
-    <section class="screen" id="screen-scratch">
-      <div class="scratchWrap">
-        <h2>The Grand Surprise</h2>
-        <p>Gosok pelan-pelan untuk melihat kejutanmu.</p>
-
-        <div class="scratchStage" id="scratchStage">
-          <div class="under">
-            <!-- TICKET UNDER SCRATCH -->
-            <div class="ticketNew" style="transform:none;">
-              <div class="tNotch left"></div>
-
-              <div class="tMain">
-                <div class="tTop">
-                  <div class="tBrand">
-                    <div class="small">Admission</div>
-                    <div class="big">Tiket VVIP</div>
-                  </div>
-                  <div class="tBadge">VVIP</div>
-                </div>
-
-                <div class="tHeadline">
-                  <h3 class="tTo" style="margin:0;">BANDUNG</h3>
-                  <p class="tMeta" style="margin:0;">Setelah Lebaran • Secepatnya</p>
-                </div>
-
-                <div class="tGrid">
-                  <div class="tCell">
-                    <div class="k">Passenger</div>
-                    <div class="v" id="passengerTextScratch">YOU &amp; ME</div>
-                  </div>
-                  <div class="tCell">
-                    <div class="k">Gate</div>
-                    <div class="v">LOVE</div>
-                  </div>
-                  <div class="tCell">
-                    <div class="k">Seat</div>
-                    <div class="v">VVIP</div>
-                  </div>
-                </div>
-
-                <div class="tFooter">
-                  <div class="tSerial">NO • KP-0212 • 2026</div>
-                  <div class="tNote">Valid for: healing berdua 💗</div>
-                </div>
+  <!-- 5. SCRATCH -->
+  <section class="screen" id="screen-scratch">
+    <div class="scratch-header">
+      <h2>The Grand Surprise</h2>
+      <p>Gosok pelan-pelan untuk lihat kejutanmu ✨</p>
+    </div>
+    <div class="scratch-stage" id="scratchStage">
+      <div class="scratch-under">
+        <!-- mini ticket under scratch -->
+        <div class="ticket-card" style="width:min(520px,88%);transform:none;flex-shrink:0;">
+          <div class="ticket-inner">
+            <div class="t-main">
+              <div class="t-top">
+                <div class="t-brand"><div class="t-small">Admission</div><div class="t-big">Tiket VVIP</div></div>
+                <div class="t-badge">VVIP</div>
               </div>
-
-              <div class="tStub">
-                <!-- left: barcode strip -->
-                <div class="stubLeft" aria-hidden="true">
-                  <div class="barcodeTall" aria-label="barcode"></div>
-                </div>
-
-                <!-- right: stub content -->
-                <div class="stubRight">
-                  <div class="stubBox">
-                    <div class="stubLabel">Tear-off</div>
-                    <div class="stubBig">Keep this part ✨</div>
-                  </div>
-
-                  <div class="qrWrap">
-                    <img src="ig-qr.jpg" class="igQrImg" id="igQrImgScratch" alt="Instagram QR">
-                    <div class="qrText">SCAN IG</div>
-                  </div>
-
-                  <div class="stubBox">
-                    <div class="stubLabel">Access</div>
-                    <div class="stubBig">All Areas</div>
-                  </div>
+              <div><div class="t-dest">BANDUNG</div><div class="t-meta">Setelah Lebaran • Secepatnya</div></div>
+              <div class="t-grid">
+                <div class="t-cell"><div class="ck">Passenger</div><div class="cv" id="paxScratch">YOU &amp; ME</div></div>
+                <div class="t-cell"><div class="ck">Gate</div><div class="cv">LOVE</div></div>
+                <div class="t-cell"><div class="ck">Seat</div><div class="cv">VVIP</div></div>
+              </div>
+              <div class="t-footer"><div class="t-serial">NO • KP-0212 • 2026</div><div class="t-note">Valid for: healing berdua 💗</div></div>
+            </div>
+            <div class="t-perf" role="separator"></div>
+            <div class="t-stub">
+              <div class="barcode-v" aria-hidden="true"></div>
+              <div class="stub-content">
+                <div class="stub-box"><div class="stub-lbl">Access</div><div class="stub-val">All Areas</div></div>
+                <div class="qr-wrap">
+                  <img src="ig-qr.jpg" class="qr-img" id="qrScratch" alt="Instagram QR">
+                  <div class="qr-lbl">SCAN IG</div>
                 </div>
               </div>
             </div>
           </div>
-
-          <canvas id="scratch"></canvas>
         </div>
-
-        <div class="endNote">Happy Birthday, sayang. Aku pengen kita bikin kenangan baru.</div>
       </div>
-    </section>
+      <canvas id="scratch"></canvas>
+    </div>
+    <div class="end-note">Happy Birthday, sayang. Aku pengen kita bikin kenangan baru.</div>
+  </section>
 
-    <!-- 6) TICKET FINAL -->
-    <section class="screen" id="screen-ticket">
-      <div class="ticketWrap">
-        <h2>Tiket VVIP</h2>
-        <p>Ini bukan cuma tiket… ini alasan untuk kita punya cerita baru. 💗</p>
-
-        <div class="ticketNew" id="ticket">
-          <div class="tNotch left"></div>
-
-          <div class="tMain">
-            <div class="tTop">
-              <div class="tBrand">
-                <div class="small">Admission</div>
-                <div class="big">Tiket VVIP</div>
-              </div>
-              <div class="tBadge">VVIP</div>
-            </div>
-
-            <div class="tHeadline">
-              <h3 class="tTo" style="margin:0;">BANDUNG</h3>
-              <p class="tMeta" id="ticketMeta" style="margin:0;">Setelah Lebaran • Secepatnya</p>
-            </div>
-
-            <div class="tGrid">
-              <div class="tCell">
-                <div class="k">Passenger</div>
-                <div class="v" id="passengerText">YOU &amp; ME</div>
-              </div>
-              <div class="tCell">
-                <div class="k">Gate</div>
-                <div class="v">LOVE</div>
-              </div>
-              <div class="tCell">
-                <div class="k">Seat</div>
-                <div class="v">VVIP</div>
-              </div>
-            </div>
-
-            <div class="tFooter">
-              <div class="tSerial">NO • KP-0212 • 2026</div>
-              <div class="tNote">Valid for: healing berdua 💗</div>
-            </div>
+  <!-- 6. TICKET FINAL -->
+  <section class="screen" id="screen-ticket">
+    <div class="ticket-header">
+      <h2>Tiket VVIP</h2>
+      <p>Ini bukan cuma tiket… ini alasan kita punya cerita baru. 💗</p>
+    </div>
+    <div class="ticket-card" id="ticketCard">
+      <div class="ticket-inner">
+        <div class="t-main">
+          <div class="t-top">
+            <div class="t-brand"><div class="t-small">Admission</div><div class="t-big">Tiket VVIP</div></div>
+            <div class="t-badge">VVIP</div>
           </div>
-
-          <div class="tStub">
-            <div class="stubLeft" aria-hidden="true">
-              <div class="barcodeTall" aria-label="barcode"></div>
+          <div><div class="t-dest">BANDUNG</div><div class="t-meta">Setelah Lebaran • Secepatnya</div></div>
+          <div class="t-grid">
+            <div class="t-cell"><div class="ck">Passenger</div><div class="cv" id="paxFinal">YOU &amp; ME</div></div>
+            <div class="t-cell"><div class="ck">Gate</div><div class="cv">LOVE</div></div>
+            <div class="t-cell"><div class="ck">Seat</div><div class="cv">VVIP</div></div>
+          </div>
+          <div class="t-footer"><div class="t-serial">NO • KP-0212 • 2026</div><div class="t-note">Valid for: healing berdua 💗</div></div>
+        </div>
+        <div class="t-perf" role="separator"></div>
+        <div class="t-stub">
+          <div class="barcode-v" aria-hidden="true"></div>
+          <div class="stub-content">
+            <div class="stub-box"><div class="stub-lbl">Tear-off</div><div class="stub-val">Robek di garis putus-putus</div></div>
+            <div class="qr-wrap">
+              <img src="ig-qr.jpg" class="qr-img" id="qrFinal" alt="Instagram QR">
+              <div class="qr-lbl">SCAN IG</div>
             </div>
-
-            <div class="stubRight">
-              <div class="stubBox">
-                <div class="stubLabel">Tear-off</div>
-                <div class="stubBig">Robek di garis putus-putus</div>
-              </div>
-
-              <div class="qrWrap">
-                <img src="ig-qr.jpg" class="igQrImg" id="igQrImg" alt="Instagram QR">
-                <div class="qrText">SCAN IG</div>
-              </div>
-
-              <div class="stubBox">
-                <div class="stubLabel">Access</div>
-                <div class="stubBig">All Areas</div>
-              </div>
-            </div>
+            <div class="stub-box"><div class="stub-lbl">Access</div><div class="stub-val">All Areas</div></div>
           </div>
         </div>
-
-        <div class="endNote">Terima kasih sudah lahir. Terima kasih sudah bertahan. Aku sayang kamu.</div>
       </div>
-    </section>
+    </div>
+    <div class="ticket-end-note">Terima kasih sudah lahir. Terima kasih sudah bertahan. Aku sayang kamu. 💗</div>
+  </section>
 
-    <!-- AUDIO -->
-    <audio id="bgm" preload="auto" playsinline>
-      <source src="romantic.mp3" type="audio/mpeg" />
-    </audio>
-  </div>
+  <audio id="bgm" preload="auto" playsinline>
+    <source src="romantic.mp3" type="audio/mpeg" />
+  </audio>
+</div>
 
-  <script>
-    // =========================
-    // CONFIG (EDIT DI SINI)
-    // =========================
-    // ✅ 8 digit sesuai placeholder & maxlength
-    const SECRET_DATE_DDMMYYYY = "010925"; // <-- GANTI: DDMMYYYY (8 digit)
+<script>
+/* ═══════════ CONFIG ═══════════ */
+const SECRET_DATE  = "010925";          // DDMMYYYY
+const HER_NAME     = "istli";
+const YOUR_NAME    = "cuami";
+const IG_URL       = "https://instagram.com/USERNAME_KAMU";
+const TYPE_SPEED   = 50;
+const PAUSE_BASE   = 500;
+const AUDIO_MAX_MS = 120000;
 
-    const HER_NAME = "istli";   // <-- GANTI nama dia
-    const YOUR_NAME = "cuami";   // <-- GANTI nama kamu
+const MEMORIES = [
+  { label:"Momen 01", title:"Aku nggak nyangka… kamu jadi rumah.",
+    caption:`Dulu cuma obrolan kecil, tapi entah kenapa aku nyaman.\nPelan-pelan kamu jadi bagian dari hari-hariku.\nDan diam-diam… aku mulai takut kehilangan kamu.`,
+    img:"images/IMG_6411.JPG" },
+  { label:"Momen 02", title:"Aku suka cara kamu bikin dunia tenang.",
+    caption:`Ada hari-hari berat yang nggak aku ceritain.\nTapi anehnya… kalau ada kamu, rasanya cukup.\nSeolah-olah semuanya bisa dilalui pelan-pelan.`,
+    img:"images/IMG_6958.jpg" },
+  { label:"Momen 03", title:"Hal biasa… jadi spesial karena kamu.",
+    caption:`Kamu mungkin nggak sadar.\nTapi keberadaanmu bikin hal sederhana terasa indah.\nAku cuma pengen ngulang momen-momen kecil itu.`,
+    img:"images/IMG_7259.JPG" },
+  { label:"Momen 04", title:"Kalau kamu lelah, aku mau jadi tempat pulang.",
+    caption:`Aku nggak mau kamu kuat sendirian.\nKalau hari kamu berat, genggam aja tanganku.\nBiar aku yang jagain kamu.`,
+    img:"images/IMG_7360.JPG" },
+  { label:"Momen 05", title:"Aku masih memilih kamu. Setiap hari.",
+    caption:`Di dunia sebesar ini, aku ketemu kamu.\nDan itu rasanya bukan kebetulan.\nKalau besok kamu ragu… aku tetap di sini.`,
+    img:"images/IMG_7843.JPG" }
+];
 
-    const IG_PROFILE_URL = "https://instagram.com/USERNAME_KAMU"; // <-- GANTI username IG
+const LOVE_SURPRISES = [
+  "Kalau kamu capek, bilang ya… aku mau jadi alasan kamu istirahat. 💗",
+  "Aku nggak butuh hari spesial buat sayang kamu… tapi aku tetap pilih hari ini. ✨",
+  "Pelan-pelan aja… yang penting sama kamu. 🤍",
+  "Aku suka kamu, versi kamu yang sekarang—dan versi kamu yang lagi berjuang. 🌙",
+  "Kalau aku boleh egois… aku pengen kamu selalu ada. 💗"
+];
 
-    const TYPE_SPEED = 52;
-    const PAUSE_BASE = 520;
-    const AUDIO_MAX_MS = 120000;
+const LETTER_STANZAS = [
+  `Selamat ulang tahun, sayang.`,
+  `Aku tahu mungkin ini cuma hari biasa di kalender.\nTapi buat aku… hari ini adalah hari di mana dunia pernah menghadirkan seseorang yang mengubah hidupku pelan-pelan.`,
+  `Aku nggak selalu pandai menjelaskan perasaanku.\nKadang aku bercanda.\nKadang aku diam.\nKadang aku terlihat biasa saja.`,
+  `Tapi yang mungkin jarang aku bilang adalah…\naku takut kehilangan kamu.`,
+  `Bukan karena aku posesif.\nTapi karena aku tahu, menemukan orang seperti kamu itu tidak mudah.`,
+  `Kamu sabar.\nKamu lembut.\nKamu kuat, bahkan saat kamu sendiri capek.`,
+  `Dan setiap kali aku memikirkan masa depan…\nyang selalu muncul di kepalaku adalah kamu.`,
+  `Bukan sekadar sebagai pacar.\nTapi sebagai orang yang ingin aku ajak pulang, ke mana pun hidup membawaku.`,
+  `Aku nggak janji hidup akan selalu mudah.\nAku nggak janji aku akan selalu benar.`,
+  `Tapi aku janji satu hal.`,
+  `Aku akan berusaha.\nBerusaha jadi lebih baik.\nBerusaha menjaga kamu.\nBerusaha tetap ada.`,
+  `Karena buat aku…\nkamu bukan cuma bagian dari hari ini.`,
+  `Kamu adalah bagian dari masa depanku.`,
+  `Dan kalau suatu hari kamu ragu,\natau merasa tidak cukup…\ningat ini.`,
+  `Di dunia sebesar ini,\naku memilih kamu.`,
+  `Setiap hari.\nTanpa ragu.`
+];
 
-    const MEMORIES = [
-      {
-        label: "Momen 01",
-        title: "Aku nggak nyangka… kamu jadi rumah.",
-        caption: `Dulu cuma obrolan kecil, tapi entah kenapa aku nyaman.
-Pelan-pelan kamu jadi bagian dari hari-hariku.
-Dan diam-diam… aku mulai takut kehilangan kamu.`,
-        img: "images/IMG_6411.JPG"
-      },
-      {
-        label: "Momen 02",
-        title: "Aku suka cara kamu bikin dunia tenang.",
-        caption: `Ada hari-hari berat yang nggak aku ceritain.
-Tapi anehnya… kalau ada kamu, rasanya cukup.
-Seolah-olah semuanya bisa dilalui pelan-pelan.`,
-        img: "images/IMG_6958.jpg"
-      },
-      {
-        label: "Momen 03",
-        title: "Hal biasa… jadi spesial karena kamu.",
-        caption: `Kamu mungkin nggak sadar.
-Tapi keberadaanmu bikin hal sederhana terasa indah.
-Aku cuma pengen ngulang momen-momen kecil itu.`,
-        img: "images/IMG_7259.JPG"
-      },
-      {
-        label: "Momen 04",
-        title: "Kalau kamu lelah, aku mau jadi tempat pulang.",
-        caption: `Aku nggak mau kamu kuat sendirian.
-Kalau hari kamu berat, genggam aja tanganku.
-Biar aku yang jagain kamu.`,
-        img: "images/IMG_7360.JPG"
-      },
-      {
-        label: "Momen 05",
-        title: "Aku masih memilih kamu. Setiap hari.",
-        caption: `Di dunia sebesar ini, aku ketemu kamu.
-Dan itu rasanya bukan kebetulan.
-Kalau besok kamu ragu… aku tetap di sini.`,
-        img: "images/IMG_7843.JPG"
-      }
-    ];
+/* ═══════════ UTILS ═══════════ */
+const $   = s => document.querySelector(s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-    const LOVE_SURPRISES = [
-      "Kalau kamu capek, bilang ya… aku mau jadi alasan kamu istirahat. 💗",
-      "Aku nggak butuh hari spesial buat sayang kamu… tapi aku tetap pilih hari ini. ✨",
-      "Pelan-pelan aja… yang penting sama kamu. 🤍",
-      "Aku suka kamu, versi kamu yang sekarang—dan versi kamu yang lagi berjuang. 🌙",
-      "Kalau aku boleh egois… aku pengen kamu selalu ada. 💗"
-    ];
+function showScreen(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  const el = document.getElementById("screen-" + id);
+  if (el) el.classList.add("active");
+  if (id === "letter")  initLetter();
+  if (id === "scratch") initScratch();
+  if (id === "ticket")  initTicketTilt();
+}
 
-    const LETTER_STANZAS = [
-`Selamat ulang tahun, sayang.`,
-`Aku tahu mungkin ini cuma hari biasa di kalender.
-Tapi buat aku… hari ini adalah hari di mana dunia pernah menghadirkan seseorang yang mengubah hidupku pelan-pelan.`,
-`Aku nggak selalu pandai menjelaskan perasaanku.
-Kadang aku bercanda.
-Kadang aku diam.
-Kadang aku terlihat biasa saja.`,
-`Tapi yang mungkin jarang aku bilang adalah…
-aku takut kehilangan kamu.`,
-`Bukan karena aku posesif.
-Tapi karena aku tahu, menemukan orang seperti kamu itu tidak mudah.`,
-`Kamu sabar.
-Kamu lembut.
-Kamu kuat, bahkan saat kamu sendiri capek.`,
-`Dan setiap kali aku memikirkan masa depan…
-yang selalu muncul di kepalaku adalah kamu.`,
-`Bukan sekadar sebagai pacar.
-Tapi sebagai orang yang ingin aku ajak pulang, ke mana pun hidup membawaku.`,
-`Aku nggak janji hidup akan selalu mudah.
-Aku nggak janji aku akan selalu benar.`,
-`Tapi aku janji satu hal.`,
-`Aku akan berusaha.
-Berusaha jadi lebih baik.
-Berusaha menjaga kamu.
-Berusaha tetap ada.`,
-`Karena buat aku…
-kamu bukan cuma bagian dari hari ini.`,
-`Kamu adalah bagian dari masa depanku.`,
-`Dan kalau suatu hari kamu ragu,
-atau merasa tidak cukup…
-ingat ini.`,
-`Di dunia sebesar ini,
-aku memilih kamu.`,
-`Setiap hari.
-Tanpa ragu.`
-    ];
+function toast(msg, ms = 2400) {
+  const t = $("#toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => t.classList.remove("show"), ms);
+}
 
-    // =========================
-    // UTIL
-    // =========================
-    const $ = (s) => document.querySelector(s);
-    const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+async function typewriter(el, text, speed = 24) {
+  el.textContent = "";
+  for (let i = 0; i < text.length; i++) {
+    el.textContent += text[i];
+    await sleep(speed);
+  }
+}
 
-    function showScreen(id){
-      document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-      const next = document.querySelector("#screen-" + id);
-      if(!next){
-        console.warn("showScreen(): screen tidak ditemukan:", id);
-        return;
-      }
-      next.classList.add("active");
-
-      if(id === "letter") initLetter();
-      if(id === "scratch") initScratch();
-      if(id === "ticket") initTicketTilt();
-    }
-
-    function toast(msg, ms=2400){
-      const t = $("#toast");
-      t.textContent = msg;
-      t.classList.add("show");
-      clearTimeout(toast._tm);
-      toast._tm = setTimeout(()=> t.classList.remove("show"), ms);
-    }
-
-    async function typewriter(el, text, speed=24){
-      el.textContent = "";
-      for(let i=0;i<text.length;i++){
-        el.textContent += text[i];
-        await sleep(speed);
-      }
-    }
-
-    async function typewriterDOM(el, text, speed=TYPE_SPEED){
-      el.textContent = "";
-      const caret = document.createElement("span");
-      caret.className = "caret";
-
-      let lineNode = document.createTextNode("");
-      el.appendChild(lineNode);
-      el.appendChild(caret);
-
-      const pushChar = (ch) => {
-        if(ch === "\n"){
-          caret.remove();
-          el.appendChild(document.createElement("br"));
-          lineNode = document.createTextNode("");
-          el.appendChild(lineNode);
-          el.appendChild(caret);
-          return;
-        }
-        lineNode.nodeValue += ch;
-      };
-
-      for(let i=0;i<text.length;i++){
-        const ch = text[i];
-        pushChar(ch);
-
-        let extra = 0;
-        if(ch === "." || ch === "!" || ch === "?") extra = 220;
-        if(ch === ",") extra = 110;
-        if(ch === "\n") extra = 260;
-
-        const jitter = Math.random() * 16;
-        await sleep(speed + extra + jitter);
-      }
-
+async function typewriterDOM(el, text, speed = TYPE_SPEED) {
+  el.textContent = "";
+  const caret = document.createElement("span");
+  caret.className = "caret";
+  let node = document.createTextNode("");
+  el.appendChild(node);
+  el.appendChild(caret);
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (ch === "\n") {
       caret.remove();
+      el.appendChild(document.createElement("br"));
+      node = document.createTextNode("");
+      el.appendChild(node);
+      el.appendChild(caret);
+    } else {
+      node.nodeValue += ch;
     }
+    const extra = ch==="."||ch==="!"||ch==="?" ? 200 : ch==="," ? 90 : ch==="\n" ? 230 : 0;
+    await sleep(speed + extra + Math.random() * 13);
+  }
+  caret.remove();
+}
 
-    // =========================
-    // ACCESSIBILITY OVERLAY CONTROL
-    // =========================
-    const app = $("#app");
-    let lastFocus = null;
+/* ═══════════ SPARKLE ═══════════ */
+const sp = $("#sparkle"), ctx = sp.getContext("2d");
+let stars = [];
+function resizeSp() {
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  sp.width = Math.floor(innerWidth * dpr);
+  sp.height = Math.floor(innerHeight * dpr);
+  sp.style.width = innerWidth + "px";
+  sp.style.height = innerHeight + "px";
+  ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr, dpr);
+  stars = Array.from({length:50}, () => ({
+    x: Math.random()*innerWidth, y: Math.random()*innerHeight,
+    r: Math.random()*1.5+.3, a: Math.random()*.65+.15, s: Math.random()*.2+.05
+  }));
+}
+function drawSp() {
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  for (const p of stars) {
+    p.y += p.s;
+    if (p.y > innerHeight+8) { p.y=-8; p.x=Math.random()*innerWidth; }
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle = `rgba(255,214,166,${p.a})`; ctx.fill();
+  }
+  requestAnimationFrame(drawSp);
+}
 
-    function setBackgroundInert(on){
-      if(!app) return;
-      if(on) app.setAttribute("inert", "");
-      else app.removeAttribute("inert");
+/* ═══════════ AUDIO ═══════════ */
+let bgmStarted = false, _fR = null, _fOR = null;
+function fadeAudio(a, to=.24, ms=2200) {
+  if(_fR) cancelAnimationFrame(_fR);
+  const t0=performance.now(), from=isFinite(a.volume)?a.volume:0;
+  const tick = n => { const p=Math.min(1,(n-t0)/ms); a.volume=Math.max(0,Math.min(1,from+(to-from)*p)); if(p<1) _fR=requestAnimationFrame(tick); };
+  _fR = requestAnimationFrame(tick);
+}
+function fadeOut(a, ms=1800) {
+  if(_fOR) cancelAnimationFrame(_fOR);
+  const t0=performance.now(), from=isFinite(a.volume)?a.volume:.24;
+  const tick = n => { const p=Math.min(1,(n-t0)/ms); a.volume=Math.max(0,from*(1-p)); if(p<1) _fOR=requestAnimationFrame(tick); else{a.pause();a.currentTime=0;a.volume=0;} };
+  _fOR = requestAnimationFrame(tick);
+}
+async function startBgm() {
+  if (bgmStarted) return; bgmStarted = true;
+  const a = $("#bgm"); if (!a) return;
+  try { a.volume=0; a.loop=true; await a.play(); fadeAudio(a,.24,2200); }
+  catch(e) { toast("Pastikan romantic.mp3 tersedia.", 2600); }
+}
+
+/* ═══════════ QR ═══════════ */
+["qrFinal","qrScratch"].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener("click", () => window.open(IG_URL, "_blank"));
+});
+
+/* ═══════════ GATEWAY ═══════════ */
+function initGateway() {
+  const input = $("#dateInput"), btn = $("#btnOpen"), card = $("#gatewayCard");
+  input.addEventListener("input", () => { input.value = input.value.replace(/\D/g,"").slice(0,8); });
+  btn.addEventListener("click", async () => {
+    if (input.value !== SECRET_DATE) {
+      card.classList.remove("shake"); void card.offsetWidth; card.classList.add("shake");
+      btn.textContent = "Coba lagi 💗";
+      setTimeout(() => btn.textContent = "Buka Pintu 💗", 900);
+      return;
     }
+    btn.textContent = "Akses Diterima ✨";
+    await sleep(600);
+    showScreen("boot");
+    await bootSequence();
+    showScreen("lane");
+    initLane();
+  });
+}
 
-    function openOverlay(el){
-      if(!el) return;
-      lastFocus = document.activeElement;
-      setBackgroundInert(true);
-      el.classList.add("show");
-      const closeBtn = el.querySelector("button");
-      closeBtn?.focus?.();
-    }
+/* ═══════════ BOOT ═══════════ */
+async function bootSequence() {
+  const line = $("#bootLine");
+  for (const s of [
+    {t:"Memuat kenangan indah…",d:1100},{t:"Menyiapkan kejutan…",d:1100},
+    {t:"Sedikit lagi…",d:800},{t:"Selamat datang, sayang.",d:900}
+  ]) { line.textContent=""; await typewriter(line,s.t,24); await sleep(s.d); }
+}
 
-    function closeOverlay(el){
-      if(!el) return;
-      el.classList.remove("show");
-      setBackgroundInert(false);
-      lastFocus?.focus?.();
-      lastFocus = null;
-    }
+/* ═══════════ MEMORY LANE — 3D RING ═══════════ */
+let laneInited = false;
+let openedSet  = new Set();
 
-    // =========================
-    // SPARKLE
-    // =========================
-    const sp = $("#sparkle");
-    const ctx = sp.getContext("2d");
-    let stars=[];
-    function resizeSparkle(){
-      const dpr = Math.min(2, window.devicePixelRatio || 1);
-      sp.width = Math.floor(innerWidth * dpr);
-      sp.height = Math.floor(innerHeight * dpr);
-      sp.style.width = innerWidth+"px";
-      sp.style.height = innerHeight+"px";
-      ctx.setTransform(1,0,0,1,0,0);
-      ctx.scale(dpr,dpr);
-      stars = Array.from({length: 70}, ()=>({
-        x: Math.random()*innerWidth,
-        y: Math.random()*innerHeight,
-        r: Math.random()*1.8 + .4,
-        a: Math.random()*0.8 + .15,
-        s: Math.random()*0.25 + 0.05
-      }));
-    }
-    function drawSparkle(){
-      ctx.clearRect(0,0,innerWidth,innerHeight);
-      for(const p of stars){
-        p.y += p.s;
-        if(p.y > innerHeight+10){ p.y = -10; p.x = Math.random()*innerWidth; }
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-        ctx.fillStyle = `rgba(255, 214, 166, ${p.a})`;
-        ctx.fill();
-      }
-      requestAnimationFrame(drawSparkle);
-    }
+function initLane() {
+  if (laneInited) return;
+  laneInited = true;
 
-    // =========================
-    // AUDIO
-    // =========================
-    let bgmStarted = false;
-    function clamp01(v){ return Math.min(1, Math.max(0, v)); }
+  const ring    = document.getElementById("ring");
+  const wrap    = document.getElementById("ringWrap");
+  const laneBtn = document.getElementById("btnToLetter");
+  const total   = MEMORIES.length;
+  const step    = 360 / total;
 
-    let _fadeRAF = null;
-    function fadeAudio(audio, to = 0.24, ms = 2200){
-      if(_fadeRAF) cancelAnimationFrame(_fadeRAF);
-      const start = performance.now();
-      const from = Number.isFinite(audio.volume) ? audio.volume : 0;
-      function tick(now){
-        const t = Math.min(1, (now - start) / ms);
-        audio.volume = clamp01(from + (to - from) * t);
-        if(t < 1) _fadeRAF = requestAnimationFrame(tick);
-      }
-      _fadeRAF = requestAnimationFrame(tick);
-    }
-
-    let _fadeOutRAF = null;
-    function fadeOutAndStop(audio, ms = 1800){
-      if(_fadeOutRAF) cancelAnimationFrame(_fadeOutRAF);
-      const start = performance.now();
-      const from = Number.isFinite(audio.volume) ? audio.volume : 0.24;
-      function tick(now){
-        const t = Math.min(1, (now - start) / ms);
-        audio.volume = clamp01(from * (1 - t));
-        if(t < 1) _fadeOutRAF = requestAnimationFrame(tick);
-        else{
-          audio.pause();
-          audio.currentTime = 0;
-          audio.volume = 0;
-        }
-      }
-      _fadeOutRAF = requestAnimationFrame(tick);
-    }
-
-    async function startBgm(){
-      if(bgmStarted) return;
-      bgmStarted = true;
-      const a = $("#bgm");
-      if(!a) return;
-      try{
-        a.volume = 0;
-        a.loop = true;
-        await a.play();
-        fadeAudio(a, 0.24, 2200);
-      }catch(e){
-        console.error("Audio play failed:", e);
-        toast("Audio belum kebuka. Pastikan romantic.mp3 ada & boleh diputar.", 2800);
-      }
-    }
-
-    // =========================
-    // IG QR click
-    // =========================
-    function makeQrClickable(id){
-      const el = document.getElementById(id);
-      if(!el) return;
-      el.addEventListener("click", ()=> window.open(IG_PROFILE_URL, "_blank"));
-    }
-    makeQrClickable("igQrImg");
-    makeQrClickable("igQrImgScratch");
-
-    // =========================
-    // LOVE MODAL
-    // =========================
-    let openedSet = new Set();
-
-    async function openLoveModal(memory, idx){
-      const modal = $("#loveModal");
-      $("#loveMedia").style.backgroundImage = `url('${memory.img}')`;
-      $("#loveTag").textContent = memory.label;
-      $("#loveTitle").textContent = memory.title || memory.label;
-
-      const storyEl = $("#loveStory");
-      storyEl.textContent = "";
-
-      openedSet.add(idx);
-      updateLaneButton();
-
-      openOverlay(modal);
-      await new Promise(r => requestAnimationFrame(()=> r()));
-      await typewriterDOM(storyEl, memory.caption);
-    }
-
-    function closeLoveModal(){ closeOverlay($("#loveModal")); }
-
-    $("#loveClose").addEventListener("click", closeLoveModal);
-    $("#loveModal").addEventListener("click", (e)=>{
-      if(e.target.id === "loveModal") closeLoveModal();
+  /* ── build items ── */
+  MEMORIES.forEach((m, i) => {
+    const el = document.createElement("div");
+    el.className = "ring-item dim";
+    el.style.backgroundImage = `url('${m.img}')`;
+    el.dataset.baseAngle = String(i * step);
+    el.innerHTML = `
+      <div class="ring-label">
+        <div class="rk">${m.label}</div>
+        <div class="rv">Tap untuk baca ceritanya</div>
+      </div>`;
+    el.addEventListener("click", () => {
+      if (getActive() !== i) return;
+      openLoveModal(m, i);
     });
+    ring.appendChild(el);
+  });
 
-    document.addEventListener("keydown", (e)=>{
-      if(e.key === "Escape"){
-        if($("#loveModal")?.classList.contains("show")) closeLoveModal();
-        if($("#afterLetter")?.classList.contains("show")) closeOverlay($("#afterLetter"));
-      }
+  /* ── rotation state ── */
+  let cur = 0, tgt = 0, vel = 0;
+  let dragging = false, lastX = 0;
+  let activeIdx = -1;
+  let rafId = null, autoTimer = null;
+
+  /* ── radius: smaller for mobile ── */
+  function radius() {
+    return Math.max(160, Math.min(320, wrap.clientWidth * 0.42));
+  }
+
+  function placeItems() {
+    const r = radius();
+    ring.querySelectorAll(".ring-item").forEach((el, i) => {
+      const a = Number(el.dataset.baseAngle);
+      el.style.transform = `rotateY(${a}deg) translateZ(${r}px)`;
     });
+  }
 
-    $("#loveSurprise").addEventListener("click", ()=>{
-      const pick = LOVE_SURPRISES[Math.floor(Math.random()*LOVE_SURPRISES.length)];
-      toast(pick, 2400);
+  function norm(d) { let x = d % 360; if (x < 0) x += 360; return x; }
+  function getActive() { return Math.round(norm(-cur) / step) % total; }
+
+  function updateActive() {
+    const idx = getActive();
+    if (idx === activeIdx) return;
+    activeIdx = idx;
+    ring.querySelectorAll(".ring-item").forEach((el, i) => {
+      el.classList.toggle("active", i === idx);
+      el.classList.toggle("dim",    i !== idx);
     });
+  }
 
-    function updateLaneButton(){
-      const btn = $("#btnToLetter");
-      if(openedSet.size >= MEMORIES.length){
-        btn.disabled = false;
-        btn.textContent = "Lanjut ✨";
-      }
+  function apply(deg) {
+    ring.style.transform = `translateZ(0) rotateY(${deg}deg)`;
+    updateActive();
+  }
+
+  function snap() { tgt = Math.round(tgt / step) * step; vel = 0; }
+
+  function tick() {
+    cur += (tgt - cur) * 0.10;
+    if (!dragging) { tgt += vel; vel *= 0.93; if (Math.abs(vel) < .002) vel = 0; }
+    apply(cur);
+    rafId = requestAnimationFrame(tick);
+  }
+
+  /* ── drag / touch ── */
+  wrap.addEventListener("pointerdown", e => {
+    dragging = true; lastX = e.clientX; vel = 0;
+    clearInterval(autoTimer); autoTimer = null;
+    try { wrap.setPointerCapture(e.pointerId); } catch{}
+  });
+  wrap.addEventListener("pointermove", e => {
+    if (!dragging) return;
+    const dx = e.clientX - lastX; lastX = e.clientX;
+    const delta = dx * 0.20;
+    tgt += delta; vel = delta * 0.08;
+  });
+  window.addEventListener("pointerup", () => {
+    if (!dragging) return;
+    dragging = false; snap(); startAuto();
+  });
+
+  /* ── auto rotate ── */
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => { tgt -= step; snap(); }, 4000);
+  }
+
+  /* ── lane button ── */
+  function updateLaneBtn() {
+    if (openedSet.size >= total) {
+      laneBtn.disabled = false;
+      laneBtn.textContent = "Lanjut ✨";
     }
+  }
+  laneBtn.addEventListener("click", () => showScreen("letter"), { once:true });
 
-    // =========================
-    // GATEWAY
-    // =========================
-    function initGateway(){
-      const input = $("#dateInput");
-      const btn = $("#btnOpen");
-      const card = $("#gatewayCard");
+  window.addEventListener("resize", placeItems);
+  placeItems();
+  apply(cur);
+  if (!rafId) rafId = requestAnimationFrame(tick);
+  startAuto();
 
-      input.addEventListener("input", () => {
-        input.value = input.value.replace(/\D/g,"").slice(0,8);
-      });
+  // expose to modal
+  window._updateLaneBtn = updateLaneBtn;
+}
 
-      function fail(){
-        card.classList.remove("shake");
-        void card.offsetWidth;
-        card.classList.add("shake");
-        btn.textContent = "Coba lagi 💗";
-        setTimeout(()=>btn.textContent="Buka Pintu", 900);
-      }
+/* ═══════════ LOVE MODAL ═══════════ */
+async function openLoveModal(m, i) {
+  const modal   = document.getElementById("loveModal");
+  const mediaEl = document.getElementById("loveMedia");
+  const storyEl = document.getElementById("loveStory");
+  mediaEl.style.backgroundImage = `url('${m.img}')`;
+  document.getElementById("loveTag").textContent   = m.label;
+  document.getElementById("loveTitle").textContent = m.title;
+  storyEl.textContent = "";
+  modal.classList.add("show");
+  openedSet.add(i);
+  window._updateLaneBtn?.();
+  await new Promise(r => requestAnimationFrame(r));
+  await typewriterDOM(storyEl, m.caption);
+}
 
-      btn.addEventListener("click", async () => {
-        if(input.value !== SECRET_DATE_DDMMYYYY){
-          fail();
-          return;
-        }
-        btn.textContent = "Akses Diterima ✨";
-        await sleep(650);
-        showScreen("boot");
-        await bootSequence();
-        showScreen("lane");
-        initLane();
-      });
+document.getElementById("loveClose").addEventListener("click", () => document.getElementById("loveModal").classList.remove("show"));
+document.getElementById("loveModal").addEventListener("click", e => { if (e.target.id === "loveModal") document.getElementById("loveModal").classList.remove("show"); });
+document.getElementById("loveSurprise").addEventListener("click", () => {
+  toast(LOVE_SURPRISES[Math.floor(Math.random() * LOVE_SURPRISES.length)], 2600);
+});
+
+/* ═══════════ LETTER ═══════════ */
+let letterInited = false;
+async function initLetter() {
+  if (letterInited) return; letterInited = true;
+  const gate    = document.getElementById("headsetGate");
+  const stanzas = document.getElementById("stanzas");
+  const header  = document.getElementById("letterHeader");
+  ["paxFinal","paxScratch"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = `${HER_NAME} & ${YOUR_NAME}`;
+  });
+  stanzas.innerHTML = "";
+  const els = LETTER_STANZAS.map(() => {
+    const box = document.createElement("div"); box.className = "stanza";
+    const p   = document.createElement("p");   box.appendChild(p); stanzas.appendChild(box);
+    return p;
+  });
+  stanzas.addEventListener("scroll", () => {
+    const p = Math.min(1, stanzas.scrollTop / 75);
+    header.style.opacity = String(1 - p);
+    header.style.transform = `translateY(${-7*p}px)`;
+  }, {passive:true});
+
+  gate.classList.add("show");
+  let started = false;
+  const begin = async (e) => {
+    if (started) return; started = true;
+    try { e?.preventDefault?.(); } catch {}
+    await startBgm(); gate.classList.remove("show");
+    const a = document.getElementById("bgm");
+    const hs = setTimeout(() => { if(a&&!a.paused) fadeOut(a,1600); }, AUDIO_MAX_MS);
+    await sleep(700);
+    for (let i = 0; i < LETTER_STANZAS.length; i++) {
+      await typewriterDOM(els[i], LETTER_STANZAS[i]);
+      els[i].parentElement.scrollIntoView({behavior:"smooth",block:"center"});
+      const w = LETTER_STANZAS[i].split(/\s+/).filter(Boolean).length;
+      await sleep(PAUSE_BASE + Math.min(1800, w * 44));
     }
+    clearTimeout(hs); if (a) fadeOut(a, 2000);
+    document.getElementById("afterLetter").classList.add("show");
+  };
+  gate.addEventListener("pointerdown", begin, {once:true});
+  gate.addEventListener("click",       begin, {once:true});
+  gate.addEventListener("touchstart",  begin, {once:true,passive:false});
+}
 
-    // =========================
-    // BOOT
-    // =========================
-    async function bootSequence(){
-      const line = $("#bootLine");
-      const seq = [
-        {t:"Memuat kenangan indah…", d:1100},
-        {t:"Menyiapkan kejutan…", d:1100},
-        {t:"Sedikit lagi…", d:800},
-        {t:"Selamat datang, sayang.", d:850},
-      ];
-      for(const s of seq){
-        line.textContent = "";
-        await typewriter(line, s.t, 24);
-        await sleep(s.d);
-      }
+document.getElementById("btnToSurprise").addEventListener("click", () => {
+  document.getElementById("afterLetter").classList.remove("show");
+  showScreen("scratch");
+  requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
+});
+
+/* ═══════════ SCRATCH ═══════════ */
+let scratchInited = false;
+function initScratch() {
+  if (scratchInited) return; scratchInited = true;
+  const canvas = document.getElementById("scratch");
+  const stage  = document.getElementById("scratchStage");
+  if (!canvas || !stage) return;
+  const c = canvas.getContext("2d", {willReadFrequently:true});
+  let isDown = false;
+
+  function resize() {
+    const rect = stage.getBoundingClientRect();
+    const dpr  = Math.min(2, devicePixelRatio||1);
+    canvas.width  = Math.floor(rect.width*dpr);
+    canvas.height = Math.floor(rect.height*dpr);
+    canvas.style.width  = rect.width+"px";
+    canvas.style.height = rect.height+"px";
+    c.setTransform(1,0,0,1,0,0); c.scale(dpr,dpr);
+    c.globalCompositeOperation = "source-over";
+    const g = c.createLinearGradient(0,0,rect.width,rect.height);
+    g.addColorStop(0,"#bebdc7"); g.addColorStop(.5,"#aaa"); g.addColorStop(1,"#666");
+    c.fillStyle = g; c.fillRect(0,0,rect.width,rect.height);
+    for (let i=0;i<900;i++) {
+      c.fillStyle = `rgba(255,255,255,${Math.random()*.12})`;
+      c.fillRect(Math.random()*rect.width, Math.random()*rect.height, 2, 2);
     }
-
-    // =========================
-    // LANE
-    // =========================
-    let laneInited = false;
-
-    let currentRotation = 0;
-    let targetRotation  = 0;
-    let dragging = false;
-    let lastX = 0;
-    let velocity = 0;
-    let rafId = null;
-    let autoTimer = null;
-    let lastActiveIdx = -1;
-
-    function initLane(){
-      if(laneInited) return;
-      laneInited = true;
-
-      const ring = $("#ring");
-      ring.innerHTML = "";
-
-      const total = MEMORIES.length;
-      const angleStep = 360 / total;
-
-      const wrap = $("#ringWrap");
-
-      function computeRadius(){
-        return Math.max(230, Math.min(400, wrap.clientWidth * 0.48));
-      }
-      let radius = computeRadius();
-
-      MEMORIES.forEach((m, i)=>{
-        const item = document.createElement("div");
-        item.className = "ringItem dim";
-        item.style.backgroundImage = `url('${m.img}')`;
-
-        const angle = i * angleStep;
-        item.dataset.angle = String(angle);
-
-        item.innerHTML = `
-          <div class="ringLabel">
-            <div class="k">${m.label}</div>
-            <div class="v">Tap untuk lihat ceritanya</div>
-          </div>
-        `;
-
-        item.addEventListener("click", ()=>{
-          const activeIdx = getActiveIndex();
-          if(activeIdx !== i) return;
-          openLoveModal(m, i);
-        });
-
-        ring.appendChild(item);
-      });
-
-      function positionItems(){
-        radius = computeRadius();
-        ring.querySelectorAll(".ringItem").forEach((item, i)=>{
-          const angle = Number(item.dataset.angle || (i*angleStep));
-          item.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
-        });
-      }
-
-      function normalizeDeg(d){
-        let x = d % 360;
-        if(x < 0) x += 360;
-        return x;
-      }
-
-      function getActiveIndex(){
-        const rot = normalizeDeg(-currentRotation);
-        return Math.round(rot / angleStep) % total;
-      }
-
-      function updateActiveIfNeeded(){
-        const activeIdx = getActiveIndex();
-        if(activeIdx === lastActiveIdx) return;
-        lastActiveIdx = activeIdx;
-
-        const items = ring.querySelectorAll(".ringItem");
-        items.forEach((el, i)=>{
-          el.classList.toggle("active", i === activeIdx);
-          el.classList.toggle("dim", i !== activeIdx);
-        });
-      }
-
-      function applyRotation(deg){
-        ring.style.transform = `translateZ(0) rotateY(${deg}deg)`;
-        updateActiveIfNeeded();
-      }
-
-      function snapToNearest(){
-        targetRotation = Math.round(targetRotation / angleStep) * angleStep;
-        velocity = 0;
-      }
-
-      function tick(){
-        const diff = targetRotation - currentRotation;
-        currentRotation += diff * 0.10;
-
-        if(!dragging){
-          targetRotation += velocity;
-          velocity *= 0.94;
-          if(Math.abs(velocity) < 0.002) velocity = 0;
-        }
-
-        applyRotation(currentRotation);
-        rafId = requestAnimationFrame(tick);
-      }
-
-      function startLoop(){
-        if(rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(tick);
-      }
-
-      function autoStep(){
-        targetRotation += -angleStep;
-        snapToNearest();
-      }
-
-      function startAuto(){
-        stopAuto();
-        autoTimer = setInterval(autoStep, 4200);
-      }
-      function stopAuto(){
-        if(autoTimer) clearInterval(autoTimer);
-        autoTimer = null;
-      }
-
-      wrap.addEventListener("pointerdown", (e)=>{
-        dragging = true;
-        stopAuto();
-        lastX = e.clientX;
-        velocity = 0;
-        wrap.setPointerCapture?.(e.pointerId);
-      });
-
-      wrap.addEventListener("pointermove", (e)=>{
-        if(!dragging) return;
-        const dx = e.clientX - lastX;
-        lastX = e.clientX;
-
-        const delta = dx * 0.18;
-        targetRotation += delta;
-        velocity = delta * 0.08;
-      });
-
-      window.addEventListener("pointerup", ()=>{
-        if(!dragging) return;
-        dragging = false;
-        snapToNearest();
-        startAuto();
-      });
-
-      window.addEventListener("resize", ()=>{ positionItems(); });
-
-      positionItems();
-      applyRotation(currentRotation);
-      startLoop();
-      startAuto();
-
-      $("#btnToLetter").addEventListener("click", () => {
-        showScreen("letter");
-      }, { once:true });
-    }
-
-    // =========================
-    // LETTER
-    // =========================
-    let letterInited = false;
-
-    async function initLetter(){
-      if(letterInited) return;
-      letterInited = true;
-
-      const gate = document.getElementById("headsetGate");
-      const st = document.getElementById("stanzas");
-      const header = document.getElementById("letterHeader");
-
-      if(!gate || !st) {
-        console.warn("initLetter(): gate/stanzas tidak ditemukan");
-        return;
-      }
-
-      const p1 = document.getElementById("passengerText");
-      const p2 = document.getElementById("passengerTextScratch");
-      if(p1) p1.textContent = `${HER_NAME} & ${YOUR_NAME}`;
-      if(p2) p2.textContent = `${HER_NAME} & ${YOUR_NAME}`;
-
-      st.innerHTML = "";
-      const stanzaEls = LETTER_STANZAS.map(() => {
-        const box = document.createElement("div");
-        box.className = "stanza";
-        const p = document.createElement("p");
-        box.appendChild(p);
-        st.appendChild(box);
-        return p;
-      });
-
-      if(header){
-        st.addEventListener("scroll", () => {
-          const y = st.scrollTop;
-          const t = Math.min(1, y / 90);
-          header.style.opacity = String(1 - t);
-          header.style.transform = `translateY(${-10*t}px)`;
-        }, {passive:true});
-      }
-
-      gate.classList.add("show");
-
-      let started = false;
-      const safeStart = async (e) => {
-        if(started) return;
-        started = true;
-        try { e?.preventDefault?.(); } catch {}
-
-        await startBgm();
-        gate.classList.remove("show");
-
-        const a = document.getElementById("bgm");
-        const hardStopTimer = setTimeout(()=>{
-          if(a && !a.paused) fadeOutAndStop(a, 1600);
-        }, AUDIO_MAX_MS);
-
-        await sleep(700);
-
-        for(let i=0;i<LETTER_STANZAS.length;i++){
-          const p = stanzaEls[i];
-          await typewriterDOM(p, LETTER_STANZAS[i]);
-          p.parentElement.scrollIntoView({behavior:"smooth", block:"center"});
-          const w = LETTER_STANZAS[i].split(/\s+/).filter(Boolean).length;
-          const pause = PAUSE_BASE + Math.min(1800, w * 46);
-          await sleep(pause);
-        }
-
-        clearTimeout(hardStopTimer);
-        if(a) fadeOutAndStop(a, 2000);
-
-        const after = document.getElementById("afterLetter");
-        if(after) after.classList.add("show");
-      };
-
-      // sekali saja (no double listener)
-      gate.addEventListener("pointerdown", safeStart, { once:true });
-      gate.addEventListener("click", safeStart, { once:true });
-      gate.addEventListener("touchstart", safeStart, { once:true, passive:false });
-    }
-
-    $("#btnToSurprise").addEventListener("click", ()=>{
-      closeOverlay($("#afterLetter"));
-      showScreen("scratch");
-      requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
-    });
-
-    // =========================
-    // SCRATCH
-    // =========================
-    let scratchInited=false;
-    function initScratch(){
-      if(scratchInited) return;
-      scratchInited=true;
-
-      const canvas = $("#scratch");
-      const stage  = $("#scratchStage");
-      if(!canvas || !stage) return;
-
-      const c = canvas.getContext("2d", { willReadFrequently: true });
-      let isDown=false;
-
-      function resize(){
-        const rect = stage.getBoundingClientRect();
-        const ratio = Math.min(2, devicePixelRatio || 1);
-
-        canvas.width  = Math.floor(rect.width  * ratio);
-        canvas.height = Math.floor(rect.height * ratio);
-        canvas.style.width  = rect.width  + "px";
-        canvas.style.height = rect.height + "px";
-
-        c.setTransform(1,0,0,1,0,0);
-        c.scale(ratio, ratio);
-
-        c.globalCompositeOperation = "source-over";
-
-        c.fillStyle = "#bfbfc6";
-        c.fillRect(0,0,rect.width,rect.height);
-
-        const g = c.createLinearGradient(0,0,rect.width,rect.height);
-        g.addColorStop(0,   "rgba(255,255,255,.42)");
-        g.addColorStop(.45, "rgba(170,170,170,.82)");
-        g.addColorStop(1,   "rgba(80,80,80,.92)");
-        c.fillStyle = g;
-        c.fillRect(0,0,rect.width,rect.height);
-
-        for(let i=0;i<1200;i++){
-          c.fillStyle = `rgba(255,255,255,${Math.random()*0.12})`;
-          c.fillRect(Math.random()*rect.width, Math.random()*rect.height, 2, 2);
-        }
-      }
-
-      function scratch(x,y){
-        c.globalCompositeOperation="destination-out";
-        const r = 30;
-        const grad = c.createRadialGradient(x,y,0,x,y,r);
-        grad.addColorStop(0, "rgba(0,0,0,1)");
-        grad.addColorStop(1, "rgba(0,0,0,0)");
-        c.fillStyle = grad;
-        c.beginPath();
-        c.arc(x,y,r,0,Math.PI*2);
-        c.fill();
-      }
-
-      function isOverlayGone(){
-        const w = canvas.width;
-        const h = canvas.height;
-        const data = c.getImageData(0,0,w,h).data;
-        const step = 50; // sedikit lebih ringan
-        for(let i=3;i<data.length;i+=step*4){
-          if(data[i] > 14) return false;
-        }
-        return true;
-      }
-
-      function pos(e){
-        const rect = stage.getBoundingClientRect();
-        const t = ("touches" in e) ? e.touches[0] : e;
-        const x = t.clientX - rect.left;
-        const y = t.clientY - rect.top;
-        return {x,y};
-      }
-
-      function down(e){
-        isDown=true;
-        const p = pos(e);
-        scratch(p.x,p.y);
-        e.preventDefault();
-      }
-      function move(e){
-        if(!isDown) return;
-        const p = pos(e);
-        scratch(p.x,p.y);
-        e.preventDefault();
-      }
-      async function up(){
-        if(!isDown) return;
-        isDown=false;
-
-        if(isOverlayGone()){
-          c.globalCompositeOperation="destination-out";
-          c.fillRect(0,0,canvas.width,canvas.height);
-          await sleep(420);
-          showScreen("ticket");
-        }
-      }
-
-      resize();
-      window.addEventListener("resize", resize);
-
-      canvas.addEventListener("pointerdown", down, {passive:false});
-      canvas.addEventListener("pointermove", move, {passive:false});
-      window.addEventListener("pointerup", up);
-
-      canvas.addEventListener("touchstart", down, {passive:false});
-      canvas.addEventListener("touchmove", move, {passive:false});
-      window.addEventListener("touchend", up);
-    }
-
-    // =========================
-    // Ticket tilt (disable for touch)
-    // =========================
-    function initTicketTilt(){
-      const ticket = $("#ticket");
-      if(!ticket) return;
-
-      const isTouch = matchMedia("(pointer: coarse)").matches;
-      if(isTouch) return;
-
-      function tiltFromMouse(e){
-        const r = ticket.getBoundingClientRect();
-        const px = (e.clientX - r.left)/r.width;
-        const py = (e.clientY - r.top)/r.height;
-        const rx = (py - 0.5) * -8;
-        const ry = (px - 0.5) * 10;
-        ticket.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-      }
-      function reset(){ ticket.style.transform = `rotateX(0deg) rotateY(0deg)`; }
-
-      ticket.addEventListener("mousemove", tiltFromMouse);
-      ticket.addEventListener("mouseleave", reset);
-    }
-
-    // =========================
-    // INIT
-    // =========================
-    resizeSparkle();
-    window.addEventListener("resize", resizeSparkle);
-    drawSparkle();
-
-    initGateway();
-  </script>
+  }
+
+  function scratchAt(x,y) {
+    c.globalCompositeOperation = "destination-out";
+    const r=34, g=c.createRadialGradient(x,y,0,x,y,r);
+    g.addColorStop(0,"rgba(0,0,0,1)"); g.addColorStop(1,"rgba(0,0,0,0)");
+    c.fillStyle=g; c.beginPath(); c.arc(x,y,r,0,Math.PI*2); c.fill();
+  }
+
+  function revealed() {
+    const d=c.getImageData(0,0,canvas.width,canvas.height).data;
+    for (let i=3;i<d.length;i+=48*4) if(d[i]>14) return false;
+    return true;
+  }
+
+  function pos(e) {
+    const r=stage.getBoundingClientRect(), src=e.touches?e.touches[0]:e;
+    return [src.clientX-r.left, src.clientY-r.top];
+  }
+
+  canvas.addEventListener("pointerdown", e=>{isDown=true;scratchAt(...pos(e));e.preventDefault();},{passive:false});
+  canvas.addEventListener("pointermove", e=>{if(!isDown)return;scratchAt(...pos(e));e.preventDefault();},{passive:false});
+  window.addEventListener("pointerup", async ()=>{
+    if(!isDown)return; isDown=false;
+    if(revealed()){c.globalCompositeOperation="destination-out";c.fillRect(0,0,canvas.width,canvas.height);await sleep(400);showScreen("ticket");}
+  });
+  resize();
+  window.addEventListener("resize", resize);
+}
+
+/* ═══════════ TICKET TILT (desktop only) ═══════════ */
+function initTicketTilt() {
+  const card = document.getElementById("ticketCard");
+  if (!card || matchMedia("(pointer:coarse)").matches) return;
+  card.addEventListener("mousemove", e => {
+    const r=card.getBoundingClientRect();
+    card.style.transform = `rotateX(${((e.clientY-r.top)/r.height-.5)*-7}deg) rotateY(${((e.clientX-r.left)/r.width-.5)*9}deg)`;
+  });
+  card.addEventListener("mouseleave", () => card.style.transform="");
+}
+
+/* ═══════════ ESC ═══════════ */
+document.addEventListener("keydown", e=>{
+  if(e.key!=="Escape")return;
+  ["loveModal","afterLetter"].forEach(id=>document.getElementById(id)?.classList.remove("show"));
+});
+
+/* ═══════════ INIT ═══════════ */
+resizeSp(); window.addEventListener("resize", resizeSp); drawSp();
+initGateway();
+</script>
 </body>
 </html>
